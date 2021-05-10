@@ -1,0 +1,60 @@
+.firstTimeBuyer {
+    display: inline-block;
+    width: auto;
+    margin: 4rem 4rem;
+   
+    position: relative;
+    animation: moveUp 2s ease-out;
+    display: none;
+
+    &__form {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color-grey-dark-2, 0.4);
+        border-radius: 1rem;
+        padding: 1rem 0;
+             
+    }
+    
+    &__calculations {
+        margin-top: 3rem;
+        background-color: rgba($color-grey-dark-2, 0.4);
+        border-radius: 1rem; 
+        padding: 1rem 0;
+    }    
+
+    &__stampDuty {
+        margin-top: 3rem;
+        background-color: rgba($color-grey-dark-2, 0.4);
+        border-radius: 1rem; 
+        padding: 1rem 0;
+    }
+
+    input {
+        border: none;
+        font-size: 2rem;
+        margin: 1rem 1.5rem;
+        padding: 0.5rem 1.5rem;
+        background-color: $color-grey-light-2;
+        border-radius: 1rem;  
+        -webkit-appearance: textfield;
+        &:focus {
+            outline: none;
+        }
+    }
+
+    label {
+        display: block; 
+        font-weight: 200;
+        margin-left: 2rem;
+        font-size: 1.3rem;
+        padding: .5 rem;
+    }
+
+   }
+   
+  
+  
+
+

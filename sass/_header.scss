@@ -1,0 +1,37 @@
+.header {
+
+    height: 10vh;
+    width: 100vw;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    border-bottom: solid white 2px;
+
+    &__textContainer {
+         /* border: 2px red solid; */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+    }
+
+    &__heading {
+        font-family: 'Merriweather', serif;
+        color: #ffffff;
+        letter-spacing: 8px;
+        font-size: 4rem;
+        font-weight: 900;
+       
+        text-align: center;
+        display: block;
+    }
+}
+
+
+
+
+
+
+

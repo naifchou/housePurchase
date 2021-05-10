@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" href="css/style.css"> -->
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">    <title>Calculator</title>
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="header">
+                <div class="header__textContainer">
+                    <h1 class="header__heading">Property Purchase</h1>
+                </div>
+            </div>
+
+            <div class="houseModal">
+               <div class="houseModal__content">
+                    <div class="houseModal__header">
+                        <h1>House Purchase</h1>
+                    </div>
+                    <form action="/index.html"  class="houseModal__body">
+                        <div class="houseModal__body__question houseModal__body__question--1">
+                            <span>Are you a first time buyer?</span>
+                            <a href="#q2" class="btnYes">Yes</a>
+                            <a href="">No</a>
+                        </div>
+                        <div class="houseModal__body__question houseModal__body__question--2" id="q2">
+                            <span>Purchase Price of the house?</span>
+                            <div class="inputContainer">
+                                <span>£</span>
+                                <input type="text" maxlength = "13" class="housePrice">
+                            </div>
+                            <a href="#q3" id = "aq2" class="button disabled">Next</a>
+                        </div>
+                        <div class="houseModal__body__question houseModal__body__question--3" id="q3">
+                            <span>What is the deposit amount you plan to put in?</span>
+                            <div class="inputContainer">
+                                <span>£</span>
+                                <input type="text" maxlength = "13" class="deposit">
+                            </div>
+                            <a href="#q4" id = "aq3" class="button disabled">Next</a>
+                        </div>
+                        <div class="houseModal__body__question houseModal__body__question--4" id="q4">
+                            <span>What is Mortage rate being offered?</span>
+                            <div class="inputContainer">
+                                <input type="text" maxlength = "4" class="rate">
+                            </div>
+                            <a href="#q5" id ="aq4" class="button disabled">Next</a>
+                        </div>
+                        <div class="houseModal__body__question houseModal__body__question--3" id="q5">
+                            <span>And what is the term time of this mortgage offer?</span>
+                            <div class="inputContainer">
+                                <input type="text" maxlength = "2" class="termTime">
+                            </div>
+                            <button type="submit" class="submit button" disabled>Next</button>
+                        </div>
+                        
+                    </form>
+               </div> 
+            </div>
+
+            <div class="firstTimeBuyer">
+                <form class="firstTimeBuyer__form">
+                    <div>
+                        <label for="price">Purchase Price:</label>
+                        <input type="text" class="formPrice" id="price">
+                    </div> 
+                    <div>   
+                        <label for="rate">Mortage Rate:</label>
+                        <input type="number" class="formRate" id="rate">
+                    </div>
+                    <div>   
+                        <label for="term">Mortage Term Time:</label>
+                        <input type="number" class="formTerm" id="term">
+                    </div>
+                   
+                    <div>
+                        <label for="deposit">Deposit: </label>
+                        <input type="text" class="formDeposit">
+                    </div>
+                </form>
+                
+                <div class="firstTimeBuyer__stampDuty">
+                    <div>
+                        <label for="stampduty">Stamp Duty:</label>
+                        <input type="text" class="formStampDuty">
+                    </div>
+                </div>
+
+                <div class="firstTimeBuyer__calculations">
+                    <div>
+                        <label for="totalcash">Total Cash Payment:</label>
+                        <input type="text" class="formTotalCash" id="totalcash">
+                    </div>
+                    <div>
+                        <label for="monthlycost">Monthly Mortgage Payment</label>
+                        <input type="text" class="formMonthlyMortgage" id="monthlycost">
+                    </div>
+                </div>
+            </div>
+
+        
+        </div>
+
+    <script src="/js/index.js"></script>
+    </body>
+</html>
+
+
