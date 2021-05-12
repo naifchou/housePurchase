@@ -13,18 +13,18 @@ document.querySelector(".btnYes").addEventListener("click", () => {
   //Hide 1st question in Modal to start series of next quesitons (controlled from within scss)
   elements.modalQuestion1.style.visibility = "hidden";
   elements.modalQuestion1.style.opacity = 0;
-
   window.addEventListener("keyup", (e) => {
-    var id = window.location.hash.replace("#", "");
-    var element = document.querySelector(`#${id} input`);
-    var elementBtn = document.querySelector(`#${id} a`);
+    let id = window.location.hash.replace("#", "");
+    let element = document.querySelector(`#${id} input`);
+    let elementBtn = document.querySelector(`#${id} a`);
 
     //Formatting Number
     if (numericOnly(e) && (id === "q2" || id === "q3")) {
-      var number = parseInt(element.value.replace(/,/g, ""));
-      var formattedNumber = new Intl.NumberFormat().format(number);
+      let number = parseInt(element.value.replace(/,/g, ""));
+      let formattedNumber = new Intl.NumberFormat().format(number);
       element.value = Number.isNaN(number) ? "" : formattedNumber;
       console.log(element.value);
+      console.log($("h1").html());
       if (element.value != "") {
         document.querySelector(`#${id} a`).classList.remove("disabled");
       } else if (element.value == "") {
@@ -51,24 +51,26 @@ document.querySelector(".btnYes").addEventListener("click", () => {
   });
 
   // Hide modal and show form when form submitted.
-  elements.modalSubmit.addEventListener("click", () => {
-    elements.firstFrom.style.display = "inline-block";
-    elements.theModal.style.display = "none";
-  });
+  // elements.modalSubmit.addEventListener("click", () => {
+  //   elements.firstFrom.style.display = "inline-block";
+  //   elements.theModal.style.display = "none";
+  // });
 });
 
 //1. Extract user inputs
-var form = document.querySelector(".houseModal__body");
+let form = document.querySelector(".houseModal__body");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  var housePrice = parseInt(elements.modalHousePrice.value.replace(/,/g, ""));
-  var deposit = parseInt(elements.modalDeposit.value.replace(/,/g, ""));
-  var rate = elements.modalRate.value;
-  var monthlyRate = rate / 100 / 12;
-  var termTime = elements.modalTermTime.value;
-  var mortgageAmount = housePrice - deposit;
-  var numberOfPayments = termTime * 12;
+  elements.firstFrom.style.display = "inline-block";
+  elements.theModal.style.display = "none";
+  let housePrice = parseInt(elements.modalHousePrice.value.replace(/,/g, ""));
+  let deposit = parseInt(elements.modalDeposit.value.replace(/,/g, ""));
+  let rate = elements.modalRate.value;
+  let monthlyRate = rate / 100 / 12;
+  let termTime = elements.modalTermTime.value;
+  let mortgageAmount = housePrice - deposit;
+  let numberOfPayments = termTime * 12;
   console.log(mortgageAmount);
   console.log(housePrice);
   console.log(elements.modalHousePrice.value);
@@ -80,7 +82,7 @@ form.addEventListener("submit", (e) => {
   elements.formTermTime.value = elements.modalTermTime.value;
 
   //3. Calculate Stamp Duty
-  var stampDuty = stampDutyFunction(housePrice, false);
+  let stampDuty = stampDutyFunction(housePrice, false);
   elements.formStampDuty.value = new Intl.NumberFormat().format(stampDuty);
   elements.formTotalCash.value = new Intl.NumberFormat().format(
     stampDuty + deposit
@@ -88,7 +90,7 @@ form.addEventListener("submit", (e) => {
 
   //4. Calculate monthly mortage
 
-  var monthlyPayments = monthlyPayment(
+  let monthlyPayments = monthlyPayment(
     mortgageAmount,
     numberOfPayments,
     monthlyRate
@@ -106,15 +108,9 @@ window.addEventListener("load", () => {
 //
 
 window.addEventListener("hashchange", () => {
-  var hashString = window.location.hash;
-  //Enable Button at Q5
-
-  // if (hashString == "#q5") {
-  //   elements.modalSubmit.disabled = false;
-  // }
-
+  let hashString = window.location.hash;
   //setting input ready with cursor
-  var currentInput = document.querySelector(`${hashString} input`);
+  let currentInput = document.querySelector(`${hashString} input`);
   currentInput.focus();
   currentInput.select();
 });
