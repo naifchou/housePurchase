@@ -34,54 +34,20 @@ $("#q2 input").validation(elements.modalq2Btn, 20000, 999999999);
 $("#q3 input").validation(elements.modalq3Btn, 10000, 999999999);
 
 //4. q4 (rate) Validation
-// $("#q4 input").validation(elements.modalq4Btn, 0.2, 4);
+$("#q4 input").validationFloat(elements.modalq4Btn, 0.2, 4);
 
-// document.querySelector(".btnYes").addEventListener("click", () => {
-//   //Hide 1st question in Modal to start series of next quesitons (controlled from within scss)
-//   elements.modalQuestion1.style.visibility = "hidden";
-//   elements.modalQuestion1.style.opacity = 0;
-//   window.addEventListener("keyup", (e) => {
-//     let id = window.location.hash.replace("#", "");
-//     let element = document.querySelector(`#${id} input`);
-//     let elementBtn = document.querySelector(`#${id} a`);
+//5. q5 validation
+$("#q5 input").validation(elements.modalSubmit, 10, 40);
+$("#q5 input").listen("keyup", () => {
+  if (elements.modalSubmit.classList.contains("disabled")) {
+    console.log("submit disabled");
+    elements.modalSubmit.disabled = true;
+  } else {
+    console.log("submit not disabled");
 
-//     //Formatting Number
-//     if (numericOnly(e) && (id === "q2" || id === "q3")) {
-//       let number = parseInt(element.value.replace(/,/g, ""));
-//       let formattedNumber = new Intl.NumberFormat().format(number);
-//       element.value = Number.isNaN(number) ? "" : formattedNumber;
-//       console.log(element.value);
-//       if (element.value != "") {
-//         document.querySelector(`#${id} a`).classList.remove("disabled");
-//       } else if (element.value == "") {
-//         document.querySelector(`#${id} a`).classList.add("disabled");
-//       }
-//     } // Rate Validation
-//     else if (numericOnly(e) && id == "q4") {
-//       rateValidation(element.value, id);
-//     } //term time Validation
-//     else if (id == "q5") {
-//       termTimeValidation(element.value);
-//     } else {
-//       console.log("nusie");
-//       element.value = element.value.substring(0, element.value.length - 1);
-//     }
-
-//     //Hitting Enter
-//     if (e.keyCode == 13 && id != "q5") {
-//       console.log(elementBtn.classList.contains("disabled"));
-//       if (!elementBtn.classList.contains("disabled")) {
-//         document.getElementById(`a${id}`).click();
-//       }
-//     }
-//   });
-
-//   // Hide modal and show form when form submitted.
-//   // elements.modalSubmit.addEventListener("click", () => {
-//   //   elements.firstFrom.style.display = "inline-block";
-//   //   elements.theModal.style.display = "none";
-//   // });
-// });
+    elements.modalSubmit.disabled = false;
+  }
+});
 
 //1. Extract user inputs
 let form = document.querySelector(".houseModal__body");
