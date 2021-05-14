@@ -1,4 +1,5 @@
 import "../sass/main.scss";
+import { $ } from "../js/library";
 
 import { stampDutyFunction } from "../js/stampDuty";
 import { monthlyPayment } from "../js/mortgageCalc";
@@ -9,53 +10,77 @@ import {
   termTimeValidation,
 } from "../js/base";
 
-document.querySelector(".btnYes").addEventListener("click", () => {
-  //Hide 1st question in Modal to start series of next quesitons (controlled from within scss)
+//Modal Controller
+
+//1. Hide Q1 in Modal to start series of next quesitons (controlled from within scss)
+
+$(".btnYes").listen("click", () => {
   elements.modalQuestion1.style.visibility = "hidden";
   elements.modalQuestion1.style.opacity = 0;
-  window.addEventListener("keyup", (e) => {
-    let id = window.location.hash.replace("#", "");
-    let element = document.querySelector(`#${id} input`);
-    let elementBtn = document.querySelector(`#${id} a`);
-
-    //Formatting Number
-    if (numericOnly(e) && (id === "q2" || id === "q3")) {
-      let number = parseInt(element.value.replace(/,/g, ""));
-      let formattedNumber = new Intl.NumberFormat().format(number);
-      element.value = Number.isNaN(number) ? "" : formattedNumber;
-      console.log(element.value);
-      console.log($("h1").html());
-      if (element.value != "") {
-        document.querySelector(`#${id} a`).classList.remove("disabled");
-      } else if (element.value == "") {
-        document.querySelector(`#${id} a`).classList.add("disabled");
-      }
-    } // Rate Validation
-    else if (numericOnly(e) && id == "q4") {
-      rateValidation(element.value, id);
-    } //term time Validation
-    else if (id == "q5") {
-      termTimeValidation(element.value);
-    } else {
-      console.log("nusie");
-      element.value = element.value.substring(0, element.value.length - 1);
-    }
-
-    //Hitting Enter
-    if (e.keyCode == 13 && id != "q5") {
-      console.log(elementBtn.classList.contains("disabled"));
-      if (!elementBtn.classList.contains("disabled")) {
-        document.getElementById(`a${id}`).click();
-      }
-    }
-  });
-
-  // Hide modal and show form when form submitted.
-  // elements.modalSubmit.addEventListener("click", () => {
-  //   elements.firstFrom.style.display = "inline-block";
-  //   elements.theModal.style.display = "none";
-  // });
 });
+
+//2. Setting the cursor ready inside input
+
+window.addEventListener("hashchange", () => {
+  let hashString = window.location.hash;
+  let currentInput = document.querySelector(`${hashString} input`);
+  currentInput.focus();
+  currentInput.select();
+});
+
+//3. Q2 and Q3 Validate [number only, seperator put in, and toggle button]
+
+$("#q2 input").validation(elements.modalq2Btn);
+$("#q3 input").validation(elements.modalq3Btn);
+
+//4. q4 (rate) Validation
+
+// document.querySelector(".btnYes").addEventListener("click", () => {
+//   //Hide 1st question in Modal to start series of next quesitons (controlled from within scss)
+//   elements.modalQuestion1.style.visibility = "hidden";
+//   elements.modalQuestion1.style.opacity = 0;
+//   window.addEventListener("keyup", (e) => {
+//     let id = window.location.hash.replace("#", "");
+//     let element = document.querySelector(`#${id} input`);
+//     let elementBtn = document.querySelector(`#${id} a`);
+
+//     //Formatting Number
+//     if (numericOnly(e) && (id === "q2" || id === "q3")) {
+//       let number = parseInt(element.value.replace(/,/g, ""));
+//       let formattedNumber = new Intl.NumberFormat().format(number);
+//       element.value = Number.isNaN(number) ? "" : formattedNumber;
+//       console.log(element.value);
+//       if (element.value != "") {
+//         document.querySelector(`#${id} a`).classList.remove("disabled");
+//       } else if (element.value == "") {
+//         document.querySelector(`#${id} a`).classList.add("disabled");
+//       }
+//     } // Rate Validation
+//     else if (numericOnly(e) && id == "q4") {
+//       rateValidation(element.value, id);
+//     } //term time Validation
+//     else if (id == "q5") {
+//       termTimeValidation(element.value);
+//     } else {
+//       console.log("nusie");
+//       element.value = element.value.substring(0, element.value.length - 1);
+//     }
+
+//     //Hitting Enter
+//     if (e.keyCode == 13 && id != "q5") {
+//       console.log(elementBtn.classList.contains("disabled"));
+//       if (!elementBtn.classList.contains("disabled")) {
+//         document.getElementById(`a${id}`).click();
+//       }
+//     }
+//   });
+
+//   // Hide modal and show form when form submitted.
+//   // elements.modalSubmit.addEventListener("click", () => {
+//   //   elements.firstFrom.style.display = "inline-block";
+//   //   elements.theModal.style.display = "none";
+//   // });
+// });
 
 //1. Extract user inputs
 let form = document.querySelector(".houseModal__body");
@@ -109,7 +134,6 @@ window.addEventListener("load", () => {
 
 window.addEventListener("hashchange", () => {
   let hashString = window.location.hash;
-  //setting input ready with cursor
   let currentInput = document.querySelector(`${hashString} input`);
   currentInput.focus();
   currentInput.select();

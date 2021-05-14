@@ -3,6 +3,8 @@ export const elements = {
   modalButton: document.querySelector(".button"),
   modalQuestion1: document.querySelector(".houseModal__body__question--1"),
   modalHousePrice: document.querySelector(".housePrice"),
+  modalq2Btn: document.querySelector("#q2Btn"),
+  modalq3Btn: document.querySelector("#q3Btn"),
   modalHousePriceBtn: document.querySelector("#aq2"),
   modalDeposit: document.querySelector(".deposit"),
   modalRate: document.querySelector(".rate"),
