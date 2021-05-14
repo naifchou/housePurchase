@@ -21,12 +21,32 @@ export const $ = (selector) => {
       self.listen("keyup", (event) => {
         if (self.numericOnly(event)) {
           let number = parseInt(self.element.value.replace(/,/g, ""));
+          self.checkRange(btn, number, min, max);
           let formattedNumber = new Intl.NumberFormat().format(number);
           self.element.value = Number.isNaN(number) ? "" : formattedNumber;
-          self.toggleButton(btn);
-        } else self.deleteLastKeypress();
+        } else if (!self.numericOnly(event)) {
+          self.deleteLastKeypress();
+        }
       });
     },
+
+    checkRange: (btn, number, min, max) => {
+      console.log(number);
+      if (number <= max && number >= min) {
+        self.toggleButton(btn, true);
+      } else self.toggleButton(btn, false);
+    },
+    // validationFloat: (btn, min, max) => {
+    //   self.listen("keyup", event, () => {
+    //     if (
+    //       self.numericOnly(event) &&
+    //       self.element.value <= max &&
+    //       self.element.value >= min
+    //     ) {
+    //     }
+    //   });
+    // },
+
     deleteLastKeypress: () => {
       self.element.value = self.element.value.substring(
         0,
@@ -34,11 +54,12 @@ export const $ = (selector) => {
       );
     },
 
-    toggleButton: (btn) => {
-      console.log(btn);
-      if (self.element.value != "") {
+    toggleButton: (btn, x) => {
+      console.log(x);
+
+      if (self.element.value != "" && x) {
         btn.classList.remove("disabled");
-      } else if (self.element.value == "") {
+      } else {
         btn.classList.add("disabled");
       }
     },

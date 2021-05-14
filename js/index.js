@@ -30,10 +30,11 @@ window.addEventListener("hashchange", () => {
 
 //3. Q2 and Q3 Validate [number only, seperator put in, and toggle button]
 
-$("#q2 input").validation(elements.modalq2Btn);
-$("#q3 input").validation(elements.modalq3Btn);
+$("#q2 input").validation(elements.modalq2Btn, 20000, 999999999);
+$("#q3 input").validation(elements.modalq3Btn, 10000, 999999999);
 
 //4. q4 (rate) Validation
+// $("#q4 input").validation(elements.modalq4Btn, 0.2, 4);
 
 // document.querySelector(".btnYes").addEventListener("click", () => {
 //   //Hide 1st question in Modal to start series of next quesitons (controlled from within scss)
