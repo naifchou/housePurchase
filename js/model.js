@@ -35,9 +35,11 @@ export const $ = (selector) => {
       if (number <= max && number >= min) {
         self.toggleButton(btn, true);
         self.hittingEnter(btn, event, true);
+        self.element.style.borderBottom = "5px solid #3cc9a6";
       } else {
         self.toggleButton(btn, false);
         self.hittingEnter(btn, event, false);
+        self.element.style.borderBottom = "5px solid red";
       }
     },
     validationFloat: (btn, min, max) => {

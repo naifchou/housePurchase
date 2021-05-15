@@ -1,20 +1,15 @@
 import "../sass/main.scss";
-import { $ } from "../js/library";
+import { $ } from "./model";
 
 import { stampDutyFunction } from "../js/stampDuty";
 import { monthlyPayment } from "../js/mortgageCalc";
-import {
-  elements,
-  numericOnly,
-  rateValidation,
-  termTimeValidation,
-} from "../js/base";
+import { elements } from "../js/base";
 
-//Modal Controller
+/* Modal Controller */
 
 //1. Hide Q1 in Modal to start series of next quesitons (controlled from within scss)
 
-$(".btnYes").listen("click", () => {
+$("#q1Btn").listen("click", () => {
   elements.modalQuestion1.style.visibility = "hidden";
   elements.modalQuestion1.style.opacity = 0;
 });
@@ -49,9 +44,10 @@ $("#q5 input").listen("keyup", () => {
   }
 });
 
-//1. Extract user inputs
+//6. Extract user inputs
 let form = document.querySelector(".houseModal__body");
 
+function handleFrom(e) {}
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   elements.firstFrom.style.display = "inline-block";
@@ -63,24 +59,21 @@ form.addEventListener("submit", (e) => {
   let termTime = elements.modalTermTime.value;
   let mortgageAmount = housePrice - deposit;
   let numberOfPayments = termTime * 12;
-  console.log(mortgageAmount);
-  console.log(housePrice);
-  console.log(elements.modalHousePrice.value);
 
-  //2. Display values in form
+  //7. Display values in form
   elements.formHousePrice.value = elements.modalHousePrice.value;
   elements.formDeposit.value = elements.modalDeposit.value;
   elements.formRate.value = elements.modalRate.value;
   elements.formTermTime.value = elements.modalTermTime.value;
 
-  //3. Calculate Stamp Duty
+  //8. Calculate Stamp Duty
   let stampDuty = stampDutyFunction(housePrice, false);
   elements.formStampDuty.value = new Intl.NumberFormat().format(stampDuty);
   elements.formTotalCash.value = new Intl.NumberFormat().format(
     stampDuty + deposit
   );
 
-  //4. Calculate monthly mortage
+  //9. Calculate monthly mortage
 
   let monthlyPayments = monthlyPayment(
     mortgageAmount,
@@ -92,16 +85,9 @@ form.addEventListener("submit", (e) => {
   );
 });
 
-//remove # at reload
+//remove # at reload - delete later
 window.addEventListener("load", () => {
   window.location.hash = "";
 });
 
 //
-
-window.addEventListener("hashchange", () => {
-  let hashString = window.location.hash;
-  let currentInput = document.querySelector(`${hashString} input`);
-  currentInput.focus();
-  currentInput.select();
-});
