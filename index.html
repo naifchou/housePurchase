@@ -23,36 +23,41 @@
                     <div class="houseModal__header">
                         <h1>House Purchase</h1>
                     </div>
-                    <form action="/index.html" class="houseModal__body">
+
+                    <!-- <form action="/index.html" class="houseModal__body">
                         <div class="houseModal__body__question houseModal__body__question--1">
-                            <span>Are you a first time buyer?</span>
-                            <a href="#q2" id = "q1Btn" class="btnYes">Yes</a>
-                            <a href="">No</a>
+                            <span>Are just buying or buying and selling ?</span>
+                            <a href="#housePriceQ" class="q1Btn">Just Buying</a>
+                            <a href="#housePriceQ" class="q1Btn">Buying and Selling</a>
                         </div>
-                        <div class="houseModal__body__question houseModal__body__question--2" id="q2">
+                        
+                        <div class="houseModal__body__question houseModal__body__question--2" id="housePriceQ">
                             <span>Purchase Price of the house?</span>
                             <div class="inputContainer">
                                 <span>£</span>
                                 <input type="text" maxlength = "13" class="housePrice">
                             </div>
-                            <a href="#q3" id = "q2Btn" class="button disabled">Next</a>
+                            <a href="#depositQ" id = "housePriceBtn" class="button disabled">Next</a>
                         </div>
-                        <div class="houseModal__body__question houseModal__body__question--3" id="q3">
+                        <div class="houseModal__body__question houseModal__body__question--3" id="depositQ">
                             <span>What is the deposit amount you plan to put in?</span>
                             <div class="inputContainer">
                                 <span>£</span>
                                 <input type="text" maxlength = "13" class="deposit">
                             </div>
-                            <a href="#q4" id = "q3Btn" class="button disabled">Next</a>
+                            <a href="#rateQ" id = "depositBtn" class="button disabled">Next</a>
                         </div>
-                        <div class="houseModal__body__question houseModal__body__question--4" id="q4">
+
+                  
+
+                        <div class="houseModal__body__question houseModal__body__question--7" id="rateQ">
                             <span>What is Mortage rate being offered?</span>
                             <div class="inputContainer">
                                 <input type="text" maxlength = "4" class="rate">
                             </div>
-                            <a href="#q5" id ="q4Btn" class="button disabled">Next</a>
+                            <a href="#termTimeQ" id ="rateBtn" class="button disabled">Next</a>
                         </div>
-                        <div class="houseModal__body__question houseModal__body__question--3" id="q5">
+                        <div class="houseModal__body__question houseModal__body__question--8" id="termTimeQ">
                             <span>And what is the term time of this mortgage offer?</span>
                             <div class="inputContainer">
                                 <input type="text" maxlength = "2" class="termTime">
@@ -60,7 +65,71 @@
                             <button type="submit" class="submit button disabled" disabled>Next</button>
                         </div>
                         
+                        
+                    </form> -->
+
+                    <form action="/index.html" class="houseModal__body">
+                        <div class="houseModal__body__question houseModal__body__question--1">
+                            <span>Are just buying or buying and selling ?</span>
+                            <a href="#housePriceQ" class="q1Btn">Just Buying</a>
+                            <a href="#housePriceQ" class="q1Btn">Buying and Selling</a>
+                        </div>
+                        
+                        <div class="houseModal__body__question houseModal__body__question--2" id="housePriceQ">
+                            <span>Purchase Price of the house?</span>
+                            <div class="inputContainer">
+                                <span>£</span>
+                                <input type="text" maxlength = "13" class="housePrice">
+                            </div>
+                            <a href="#depositQ" id = "housePriceBtn" class="button disabled">Next</a>
+                        </div>
+                        <div class="houseModal__body__question houseModal__body__question--3" id="depositQ">
+                            <span>What is the deposit amount you plan to put in?</span>
+                            <div class="inputContainer">
+                                <span>£</span>
+                                <input type="text" maxlength = "13" class="deposit">
+                            </div>
+                            <a href="#fixedOrNotQ" id = "depositBtn" class="button disabled">Next</a>
+                        </div>
+                        <div class="houseModal__body__question houseModal__body__question--4" id="fixedOrNotQ">
+                            <span>Is your current Mortgage Fixed?</span>
+                            <a href="#sellingPriceQ" id = "q1Btn" class="q1Btn">Not Fixed</a>
+                            <a href="#sellingPriceQ" class="q1Btn">Fixed</a>
+                        </div>
+                        <div class="houseModal__body__question houseModal__body__question--5" id="sellingPriceQ">
+                            <span>What is the selling price of your house?</span>
+                            <div class="inputContainer">
+                                <span>£</span>
+                                <input type="text" maxlength = "13" class="sellingPrice">
+                            </div>
+                            <a href="#mortgageBalanceQ" id = "sellingPriceBtn" class="button disabled">Next</a>
+                        </div>
+                        <div class="houseModal__body__question houseModal__body__question--6" id="mortgageBalanceQ">
+                            <span>What is the current Mortage Balance ?</span>
+                            <div class="inputContainer">
+                                <span>£</span>
+                                <input type="text" maxlength = "13" class="mortgageBalance">
+                            </div>
+                            <a href="#rateQ" id = "q3Btn" class="button disabled">Next</a>
+                        </div> 
+                        <div class="houseModal__body__question houseModal__body__question--7" id="rateQ">
+                            <span>What is Mortage rate being offered?</span>
+                            <div class="inputContainer">
+                                <input type="text" maxlength = "4" class="rate">
+                            </div>
+                            <a href="#termTimeQ" id ="rateBtn" class="button disabled">Next</a>
+                        </div>
+                        <div class="houseModal__body__question houseModal__body__question--8" id="termTimeQ">
+                            <span>And what is the term time of this mortgage offer?</span>
+                            <div class="inputContainer">
+                                <input type="text" maxlength = "2" class="termTime">
+                            </div>
+                            <button type="submit" class="submit button disabled" disabled>Next</button>
+                        </div>
+                        
+                        
                     </form>
+
                </div> 
             </div>
 

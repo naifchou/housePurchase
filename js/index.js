@@ -9,7 +9,7 @@ import { elements } from "../js/base";
 
 //1. Hide Q1 in Modal to start series of next quesitons (controlled from within scss)
 
-$("#q1Btn").listen("click", () => {
+$(".q1Btn").listen("click", () => {
   elements.modalQuestion1.style.visibility = "hidden";
   elements.modalQuestion1.style.opacity = 0;
 });
@@ -19,21 +19,33 @@ $("#q1Btn").listen("click", () => {
 window.addEventListener("hashchange", () => {
   let hashString = window.location.hash;
   let currentInput = document.querySelector(`${hashString} input`);
-  currentInput.focus();
-  currentInput.select();
+  if (currentInput != null) {
+    currentInput.focus();
+    currentInput.select();
+  }
 });
 
-//3. Q2 and Q3 Validate [number only, seperator put in, and toggle button]
+//3. Validation for - HousePrice, Deposit, selling price  Validate [number only, seperator put in, and toggle button]
 
-$("#q2 input").validation(elements.modalq2Btn, 20000, 999999999);
-$("#q3 input").validation(elements.modalq3Btn, 10000, 999999999);
+$("#housePriceQ input").validation(
+  elements.modalHousePriceBtn,
+  20000,
+  999999999
+);
+$(".deposit").validation(elements.modalDepositBtn, 10000, 999999999);
+$(".sellingPrice").validation(elements.modalSellingPriceBtn, 10000, 999999999);
+$(".mortgageBalance").validation(
+  elements.modalSellingPriceBtn,
+  10000,
+  999999999
+);
 
 //4. q4 (rate) Validation
-$("#q4 input").validationFloat(elements.modalq4Btn, 0.2, 4);
+$(".rate").validationFloat(elements.modalRateBtn, 0.2, 4);
 
 //5. q5 validation
-$("#q5 input").validation(elements.modalSubmit, 10, 40);
-$("#q5 input").listen("keyup", () => {
+$(".termTime").validation(elements.modalSubmit, 10, 40);
+$(".termTime").listen("keyup", () => {
   if (elements.modalSubmit.classList.contains("disabled")) {
     console.log("submit disabled");
     elements.modalSubmit.disabled = true;
@@ -47,7 +59,6 @@ $("#q5 input").listen("keyup", () => {
 //6. Extract user inputs
 let form = document.querySelector(".houseModal__body");
 
-function handleFrom(e) {}
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   elements.firstFrom.style.display = "inline-block";

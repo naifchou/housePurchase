@@ -6,6 +6,7 @@
     left: 0%;
     background-color: rgba($color-black, .8); // make sure no space after rgba
     z-index: 999999;
+    display: none; //remove this line later
    
 
     &__content {
@@ -37,9 +38,8 @@
             
             
 
-            &--1 {
+            &--1, &--4 {
                 
-
                 span {
                     display: block;
                     width: 100%;
@@ -52,16 +52,23 @@
                 }   
             }
 
-            &--2, &--3, &--4, &--5, &--6 {
+            &--4 {
+                opacity: 0;
+                visibility: hidden;
+
+        
+            }
+
+            &--2, &--3, &--5, &--6, &--7, &--8{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 opacity: 0;
                 visibility: hidden;
 
-                .disabled {
-                    pointer-events: none;
-                }
+                // .disabled {
+                //     pointer-events: none;
+                // }
 
                 span {
                     display: block;
