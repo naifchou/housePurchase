@@ -6,7 +6,6 @@
     left: 0%;
     background-color: rgba($color-black, .8); // make sure no space after rgba
     z-index: 999999;
-    display: none; //remove this line later
    
 
     &__content {
@@ -19,7 +18,6 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
-
     }
 
     &__header {
@@ -33,6 +31,7 @@
         flex-grow: 1;
       
         &__question {
+            padding: 1rem;
             width: 100%;
             @include centerItem;
             
@@ -44,10 +43,10 @@
                     display: block;
                     width: 100%;
                     padding: 3rem 0;
-                    font-size: 2.5rem;
+                    font-size: 3em;
                 }
                 a {                   
-                    margin: 0 1rem;
+                    margin: 1rem 1rem;
                     @include button;
                 }   
             }
@@ -59,7 +58,7 @@
         
             }
 
-            &--2, &--3, &--5, &--6, &--7, &--8{
+            &--2, &--3, &--5, &--6, &--7, &--8, &--9 {
                 display: flex;
                 flex-direction: column;
                 align-items: center;

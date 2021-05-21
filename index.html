@@ -70,11 +70,10 @@
 
                     <form action="/index.html" class="houseModal__body">
                         <div class="houseModal__body__question houseModal__body__question--1">
-                            <span>Are just buying or buying and selling ?</span>
-                            <a href="#housePriceQ" class="q1Btn">Just Buying</a>
-                            <a href="#housePriceQ" class="q1Btn">Buying and Selling</a>
+                            <span>Are you buying only or buying and selling?</span>
+                            <a href="#housePriceQ" class="q1Btn q1BtnBuying">Just Buying</a>
+                            <a href="#housePriceQ" class="q1Btn q1BtnBuyingSelling">Buying and Selling</a>
                         </div>
-                        
                         <div class="houseModal__body__question houseModal__body__question--2" id="housePriceQ">
                             <span>Purchase Price of the house?</span>
                             <div class="inputContainer">
@@ -110,31 +109,37 @@
                                 <span>£</span>
                                 <input type="text" maxlength = "13" class="mortgageBalance">
                             </div>
-                            <a href="#rateQ" id = "q3Btn" class="button disabled">Next</a>
+                            <a href="#oldRateQ" id = "mortgageBalanceBtn" class="button disabled">Next</a>
                         </div> 
-                        <div class="houseModal__body__question houseModal__body__question--7" id="rateQ">
-                            <span>What is Mortage rate being offered?</span>
+                        <div class="houseModal__body__question houseModal__body__question--7" id="oldRateQ">
+                            <span>What is mortgage rate currently for the house being sold?</span>
+                            <div class="inputContainer">
+                                <span>£</span>
+                                <input type="text" maxlength = "13" class="oldRate">
+                            </div>
+                            <a href="#rateQ" id = "oldRateBtn" class="button disabled">Next</a>
+                        </div> 
+                        <div class="houseModal__body__question houseModal__body__question--8" id="rateQ">
+                            <span>What is the new Mortage rate being offered?</span>
                             <div class="inputContainer">
                                 <input type="text" maxlength = "4" class="rate">
                             </div>
                             <a href="#termTimeQ" id ="rateBtn" class="button disabled">Next</a>
                         </div>
-                        <div class="houseModal__body__question houseModal__body__question--8" id="termTimeQ">
+                        <div class="houseModal__body__question houseModal__body__question--9" id="termTimeQ">
                             <span>And what is the term time of this mortgage offer?</span>
                             <div class="inputContainer">
                                 <input type="text" maxlength = "2" class="termTime">
                             </div>
                             <button type="submit" class="submit button disabled" disabled>Next</button>
-                        </div>
-                        
-                        
+                        </div>         
                     </form>
 
                </div> 
             </div>
 
-            <div class="firstTimeBuyer">
-                <form class="firstTimeBuyer__form">
+            <!-- <div class="firstForm">
+                <form class="firstForm__form">
                     <div>
                         <label for="price">Purchase Price:</label>
                         <input type="text" class="formPrice" id="price">
@@ -154,14 +159,75 @@
                     </div>
                 </form>
                 
-                <div class="firstTimeBuyer__stampDuty">
+                <div class="firstForm__stampDuty">
                     <div>
                         <label for="stampduty">Stamp Duty:</label>
                         <input type="text" class="formStampDuty">
                     </div>
                 </div>
 
-                <div class="firstTimeBuyer__calculations">
+                <div class="firstForm__calculations">
+                    <div>
+                        <label for="totalcash">Total Cash Payment:</label>
+                        <input type="text" class="formTotalCash" id="totalcash">
+                    </div>
+                    <div>
+                        <label for="monthlycost">Monthly Mortgage Payment</label>
+                        <input type="text" class="formMonthlyMortgage" id="monthlycost">
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="firstForm">
+                <div class="firstForm__container firstForm__container--1">
+                    <div class="housePriceDiv">
+                        <label for="price">House Purchase Price:</label>
+                        <input type="text" class="formPurchasePrice" id="price">
+                    </div> 
+                    <!-- <div>
+                        <label for="price">Hosue Sale Price:</label>
+                        <input type="text" class="formSellingPrice">
+                    </div>  -->
+                    <div>
+                        <label for="deposit">Planned Deposit Payment </label>
+                        <input type="text" class="formDeposit">
+                    </div>
+                </div>
+                <div class="firstForm__container firstForm__container--2">
+                    <div>
+                        <label for="price">Current Mortgage Balance:</label>
+                        <input type="text" class="formMortgageBalance">
+                    </div>
+                    <div>
+                        <label for="price">Current Mortgage Rate:</label>
+                        <input type="text" class="formOldRate">
+                    </div>
+                </div>
+                <div class="firstForm__container firstForm__container--3">
+
+                    <!-- <div>
+                        <label for="price">New Mortgage amount:</label>
+                        <input type="text" class="formNewMortgageAmount">
+                    </div>
+                    <div>   
+                        <label for="rate">New Mortage Rate:</label>
+                        <input type="text" class="formRate" id="rate">
+                    </div> -->
+                    <div>   
+                        <label for="term">Mortage Term Time:</label>
+                        <input type="text" class="formTerm" id="term">
+                    </div>
+                </div>
+            
+                
+                <div class="firstForm__container firstForm__container--4">
+                    <div>
+                        <label for="stampduty">Stamp Duty:</label>
+                        <input type="text" class="formStampDuty">
+                    </div>
+                </div>
+
+                <div class="firstForm__container firstForm__container--5">
                     <div>
                         <label for="totalcash">Total Cash Payment:</label>
                         <input type="text" class="formTotalCash" id="totalcash">
@@ -172,8 +238,6 @@
                     </div>
                 </div>
             </div>
-
-        
         </div>
 
     <script src="/js/index.js"></script>

@@ -18,7 +18,7 @@ body {
 .container {
     background-image: linear-gradient(to right bottom, rgba(44, 62, 80, 0.9), hsla(188, 39%, 49%, 0.902)), url(/img/house.jpg);
     background-size: cover;
-    height: 100vh;
+    height: 100%;
     // clip-path: polygon(0 0, 100% 0, 100% 33%, 52% 52%, 99% 100%, 0 100%);
 
 }
