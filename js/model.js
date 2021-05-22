@@ -1,4 +1,4 @@
-export const $ = (selector) => {
+export const validation = (selector) => {
   const self = {
     element: document.querySelector(selector),
     html: () => self.element,
@@ -17,7 +17,7 @@ export const $ = (selector) => {
         e.keyCode == 13;
       return isNumber;
     },
-    validation: (btn, min, max) => {
+    number: (btn, min, max) => {
       self.listen("keyup", (event) => {
         if (self.numericOnly(event)) {
           let number = parseInt(self.element.value.replace(/,/g, ""));
@@ -31,7 +31,6 @@ export const $ = (selector) => {
     },
 
     checkRange: (btn, number, min, max, event) => {
-      console.log(number);
       if (number <= max && number >= min) {
         self.toggleButton(btn, true);
         self.hittingEnter(btn, event, true);
@@ -42,7 +41,7 @@ export const $ = (selector) => {
         self.element.style.borderBottom = "5px solid red";
       }
     },
-    validationFloat: (btn, min, max) => {
+    float: (btn, min, max) => {
       self.listen("keyup", (event) => {
         if (self.numericOnly(event)) {
           self.checkRange(btn, self.element.value, min, max, event);
@@ -60,8 +59,6 @@ export const $ = (selector) => {
     },
 
     toggleButton: (btn, x) => {
-      console.log(x);
-
       if (self.element.value != "" && x) {
         btn.classList.remove("disabled");
       } else {

@@ -2,6 +2,7 @@ export const elements = {
   theModal: document.querySelector(".houseModal"),
   // modalButton: document.querySelector(".button"),
   modalQuestion1: document.querySelector(".houseModal__body__question--1"),
+  modalFixedOrNotQ: document.querySelector(".houseModal__body__question--4"),
   modalHousePrice: document.querySelector(".housePrice"),
   modalSellingPrice: document.querySelector(".sellingPrice"),
   modalDeposit: document.querySelector(".deposit"),
@@ -25,10 +26,10 @@ export const elements = {
 
   firstForm: document.querySelector(".firstForm"),
   formHousePrice: document.querySelector(".formPurchasePrice"),
-  formSellingPrice: document.querySelector(".formSellingPrice"),
   formDeposit: document.querySelector(".formDeposit"),
-  formMortgageBalance: document.querySelector(".formMortgageBalance"),
 
+  formNewMortgageAmount: document.querySelector(".formNewMortgageAmount"),
+  formRate: document.querySelector(".formRate"),
   formOldRate: document.querySelector(".formOldRate"),
 
   formTermTime: document.querySelector(".formTerm"),
@@ -37,10 +38,10 @@ export const elements = {
   formMonthlyMortgage: document.querySelector(".formMonthlyMortgage"),
 
   add: () => {
-    elements.formNewMortgageAmount = document.querySelector(
-      ".formNewMortgageAmount"
+    elements.formMortgageBalance = document.querySelector(
+      ".formMortgageBalance"
     );
-    elements.formRate = document.querySelector(".formRate");
+    elements.formOldRate = document.querySelector(".formOldRate");
     elements.formSellingPrice = document.querySelector(".formSellingPrice");
   },
 };

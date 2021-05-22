@@ -1,15 +1,15 @@
 import { elements } from "../js/base";
 
 export const toggleForm = (x) => {
-  console.log("wqwwwww");
-  console.log(x);
-  const markup = `<div>
-  <label for="price">New Mortgage amount:</label>
-  <input type="text" class="formNewMortgageAmount">
-</div>
-<div>   
-  <label for="rate">New Mortage Rate:</label>
-  <input type="text" class="formRate" id="rate">
+  const markup = `<div class="firstForm__container firstForm__container--2">
+  <div>
+      <label for="price">Current Mortgage Balance:</label>
+      <input type="text" class="formMortgageBalance">
+  </div>
+  <div>
+      <label for="price">Current Mortgage Rate:</label>
+      <input type="text" class="formOldRate">
+  </div>
 </div>`;
 
   const markup2 = `  <div>
@@ -18,11 +18,10 @@ export const toggleForm = (x) => {
 </div> `;
 
   if (!x) {
-    const element = document.querySelector(".firstForm__container--3");
+    const element = document.querySelector(".firstForm__container--1");
     const element2 = document.querySelector(".housePriceDiv");
 
-    console.log(element);
-    element.insertAdjacentHTML("afterbegin", markup);
+    element.insertAdjacentHTML("afterend", markup);
     element2.insertAdjacentHTML("afterend", markup2);
     elements.modalDepositBtn.setAttribute("href", "#fixedOrNotQ");
     elements.add();

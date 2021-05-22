@@ -1,5 +1,5 @@
 import "../sass/main.scss";
-import { $ } from "./model";
+import { validation } from "./model";
 
 import { stampDutyFunction } from "../js/stampDuty";
 import { toggleForm } from "../js/form";
@@ -22,6 +22,13 @@ elements.modalQuestion1.addEventListener("click", (e) => {
   }
 });
 
+elements.modalFixedOrNotQ.addEventListener("click", (e) => {
+  if (e.target.matches("#rateNotFixedBtn")) {
+    state.rateFixed = false;
+  } else if (e.target.matches("#rateFixedBtn")) {
+    state.rateFixed = true;
+  }
+});
 //2. Setting the cursor ready inside input
 
 window.addEventListener("hashchange", () => {
@@ -35,26 +42,30 @@ window.addEventListener("hashchange", () => {
 
 //3. Validation for - HousePrice, Deposit, selling price  Validate [number only, seperator put in, and toggle button]
 
-$("#housePriceQ input").validation(
+validation("#housePriceQ input").number(
   elements.modalHousePriceBtn,
   20000,
   999999999
 );
-$(".deposit").validation(elements.modalDepositBtn, 10000, 999999999);
-$(".sellingPrice").validation(elements.modalSellingPriceBtn, 10000, 999999999);
-$(".mortgageBalance").validation(
+validation(".deposit").number(elements.modalDepositBtn, 10000, 999999999);
+validation(".sellingPrice").number(
+  elements.modalSellingPriceBtn,
+  10000,
+  999999999
+);
+validation(".mortgageBalance").number(
   elements.modalMortgageBalanceBtn,
   10000,
   999999999
 );
 
 //4. rate Validation
-$(".rate").validationFloat(elements.modalRateBtn, 0.2, 4);
-$(".oldRate").validationFloat(elements.modalOldRateBtn, 0.2, 4);
+validation(".rate").float(elements.modalRateBtn, 0.2, 4);
+validation(".oldRate").float(elements.modalOldRateBtn, 0.2, 4);
 
 //5. term time validation
-$(".termTime").validation(elements.modalSubmit, 10, 40);
-$(".termTime").listen("keyup", () => {
+validation(".termTime").number(elements.modalSubmit, 10, 40);
+validation(".termTime").listen("keyup", () => {
   if (elements.modalSubmit.classList.contains("disabled")) {
     console.log("submit disabled");
     elements.modalSubmit.disabled = true;
@@ -74,12 +85,17 @@ form.addEventListener("submit", (e) => {
   elements.theModal.style.display = "none";
   let housePrice = parseInt(elements.modalHousePrice.value.replace(/,/g, ""));
   let deposit = parseInt(elements.modalDeposit.value.replace(/,/g, ""));
-
+  let rate = elements.modalRate.value;
+  let monthlyRate = rate / 100 / 12;
+  let termTime = elements.modalTermTime.value;
+  let numberOfPayments = termTime * 12;
   let sellingPrice, newMortgageAmount, oldMonthlyRate, oldRate, mortgageBalance;
 
   if (!state.buyingOnly) {
     sellingPrice = parseInt(elements.modalSellingPrice.value.replace(/,/g, ""));
-    oldRate = elements.modalOldRate.value;
+    if (state.rateFixed) {
+      oldRate = elements.modalOldRate.value;
+    } else oldRate = rate;
     oldMonthlyRate = oldRate / 100 / 12;
     mortgageBalance = parseInt(
       elements.modalMortgageBalance.value.replace(/,/g, "")
@@ -89,23 +105,18 @@ form.addEventListener("submit", (e) => {
     newMortgageAmount = housePrice - deposit;
   }
 
-  let rate = elements.modalRate.value;
-  let monthlyRate = rate / 100 / 12;
-  let termTime = elements.modalTermTime.value;
-  let numberOfPayments = termTime * 12;
-
   //7. Display values in form
   elements.formHousePrice.value = elements.modalHousePrice.value;
   elements.formDeposit.value = elements.modalDeposit.value;
 
   elements.formRate.value = elements.modalRate.value;
   elements.formTermTime.value = elements.modalTermTime.value;
+  elements.formNewMortgageAmount.value = new Intl.NumberFormat().format(
+    newMortgageAmount
+  );
 
   if (!state.buyingOnly) {
     elements.formSellingPrice.value = elements.modalSellingPrice.value;
-    elements.formNewMortgageAmount.value = new Intl.NumberFormat().format(
-      newMortgageAmount
-    );
     elements.formMortgageBalance.value = elements.modalMortgageBalance.value;
     elements.formOldRate.value = elements.modalOldRate.value;
   }
