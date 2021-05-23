@@ -1,12 +1,12 @@
 import { elements } from "../js/base";
 
-export const toggleForm = (x) => {
+export const toggleForm = (onlyBuying, rateNotFixed) => {
   const markup = `<div class="firstForm__container firstForm__container--2">
   <div>
       <label for="price">Current Mortgage Balance:</label>
       <input type="text" class="formMortgageBalance">
   </div>
-  <div>
+  <div id = "oldRateDiv" >
       <label for="price">Current Mortgage Rate:</label>
       <input type="text" class="formOldRate">
   </div>
@@ -17,7 +17,7 @@ export const toggleForm = (x) => {
   <input type="text" class="formSellingPrice">
 </div> `;
 
-  if (!x) {
+  if (!onlyBuying) {
     const element = document.querySelector(".firstForm__container--1");
     const element2 = document.querySelector(".housePriceDiv");
 
@@ -28,7 +28,6 @@ export const toggleForm = (x) => {
   } else {
     elements.modalDepositBtn.setAttribute("href", "#rateQ");
   }
-
   elements.modalQuestion1.style.visibility = "hidden";
   elements.modalQuestion1.style.opacity = 0;
 };

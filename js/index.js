@@ -25,6 +25,9 @@ elements.modalQuestion1.addEventListener("click", (e) => {
 elements.modalFixedOrNotQ.addEventListener("click", (e) => {
   if (e.target.matches("#rateNotFixedBtn")) {
     state.rateFixed = false;
+    elements.formOldRateDiv.parentNode.removeChild(elements.formOldRateDiv);
+    elements.modalOldRateQ.parentNode.removeChild(elements.modalOldRateQ);
+    elements.modalMortgageBalanceBtn.setAttribute("href", "#rateQ");
   } else if (e.target.matches("#rateFixedBtn")) {
     state.rateFixed = true;
   }

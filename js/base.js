@@ -3,10 +3,10 @@ export const elements = {
   // modalButton: document.querySelector(".button"),
   modalQuestion1: document.querySelector(".houseModal__body__question--1"),
   modalFixedOrNotQ: document.querySelector(".houseModal__body__question--4"),
+  modalOldRateQ: document.querySelector("#oldRateQ"),
   modalHousePrice: document.querySelector(".housePrice"),
   modalSellingPrice: document.querySelector(".sellingPrice"),
   modalDeposit: document.querySelector(".deposit"),
-  modalMortgageBalance: document.querySelector(".mortgageBalance"),
   modalMortgageBalance: document.querySelector(".mortgageBalance"),
 
   modalRate: document.querySelector(".rate"),
@@ -43,5 +43,6 @@ export const elements = {
     );
     elements.formOldRate = document.querySelector(".formOldRate");
     elements.formSellingPrice = document.querySelector(".formSellingPrice");
+    elements.formOldRateDiv = document.querySelector("#oldRateDiv");
   },
 };
