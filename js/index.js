@@ -1,10 +1,9 @@
 import "../sass/main.scss";
 import { validation } from "./model";
-
-import { stampDutyFunction } from "../js/stampDuty";
+import { calcStampDuty } from "../js/stampDuty";
 import { toggleForm } from "../js/form";
-import { monthlyPayment } from "../js/mortgageCalc";
-import { elements } from "../js/base";
+import { getMonthlyPayment } from "../js/mortgageCalc";
+import { elements } from "./variables";
 
 /* Modal Controller */
 
@@ -39,7 +38,6 @@ window.addEventListener("hashchange", () => {
   let currentInput = document.querySelector(`${hashString} input`);
   if (currentInput != null) {
     currentInput.focus();
-    // currentInput.select();
   }
 });
 
@@ -124,7 +122,7 @@ form.addEventListener("submit", (e) => {
     elements.formOldRate.value = elements.modalOldRate.value;
   }
   //8. Calculate Stamp Duty
-  let stampDuty = stampDutyFunction(housePrice, false);
+  let stampDuty = calcStampDuty(housePrice, false);
   elements.formStampDuty.value = new Intl.NumberFormat().format(stampDuty);
   elements.formTotalCash.value = new Intl.NumberFormat().format(
     stampDuty + deposit
@@ -133,7 +131,7 @@ form.addEventListener("submit", (e) => {
   //9. Calculate monthly mortage
 
   let monthlyPayments, oldMonthlyPayments, totalMonthlyPayments;
-  monthlyPayments = monthlyPayment(
+  monthlyPayments = getMonthlyPayment(
     newMortgageAmount,
     numberOfPayments,
     monthlyRate
@@ -144,7 +142,7 @@ form.addEventListener("submit", (e) => {
       monthlyPayments.toFixed(2)
     );
   } else if (!state.buyingOnly) {
-    oldMonthlyPayments = monthlyPayment(
+    oldMonthlyPayments = getMonthlyPayment(
       mortgageBalance,
       numberOfPayments,
       oldMonthlyRate

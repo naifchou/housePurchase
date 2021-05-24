@@ -1,4 +1,4 @@
-import { elements } from "../js/base";
+import { elements } from "./variables";
 
 export const toggleForm = (onlyBuying, rateNotFixed) => {
   const markup = `<div class="firstForm__container firstForm__container--2">

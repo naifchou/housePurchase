@@ -1,4 +1,4 @@
-export const stampDutyFunction = (price, secondHome) => {
+export const calcStampDuty = (price, secondHome) => {
   var stampduty = 0;
   var intervals = {
     0: {
