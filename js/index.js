@@ -39,7 +39,7 @@ window.addEventListener("hashchange", () => {
   let currentInput = document.querySelector(`${hashString} input`);
   if (currentInput != null) {
     currentInput.focus();
-    currentInput.select();
+    // currentInput.select();
   }
 });
 
