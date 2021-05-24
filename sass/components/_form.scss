@@ -16,6 +16,14 @@
              
     }
 
+    label {
+        display: block; 
+        font-weight: 200;
+        margin-left: 2rem;
+        font-size: 1.2rem;
+        padding: .5 rem;
+    }
+
     input {
         border: none;
         font-size: 2rem;
@@ -27,14 +35,6 @@
         &:focus {
             outline: none;
         }
-    }
-
-    label {
-        display: block; 
-        font-weight: 200;
-        margin-left: 2rem;
-        font-size: 1.2rem;
-        padding: .5 rem;
     }
 
    }

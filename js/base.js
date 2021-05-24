@@ -1,6 +1,5 @@
 export const elements = {
   theModal: document.querySelector(".houseModal"),
-  // modalButton: document.querySelector(".button"),
   modalQuestion1: document.querySelector(".houseModal__body__question--1"),
   modalFixedOrNotQ: document.querySelector(".houseModal__body__question--4"),
   modalOldRateQ: document.querySelector("#oldRateQ"),
