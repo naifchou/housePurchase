@@ -1,6 +1,6 @@
 import { elements } from "./variables";
 
-export const toggleForm = (onlyBuying, rateNotFixed) => {
+export const toggleForm = (onlyBuying) => {
   const markup = `<div class="firstForm__container firstForm__container--2">
   <div>
       <label for="price">Current Mortgage Balance:</label>

@@ -1,9 +1,10 @@
 import "../sass/main.scss";
-import { validation } from "./model";
+import { validation } from "./validation";
 import { calcStampDuty } from "../js/stampDuty";
 import { toggleForm } from "../js/form";
 import { getMonthlyPayment } from "../js/mortgageCalc";
 import { elements } from "./variables";
+import { listen } from "./base";
 
 /* Modal Controller */
 
@@ -11,26 +12,27 @@ const state = {};
 
 //1. Hide Q1 in Modal to start series of next quesitons (controlled from within scss) and toggle form
 
-elements.modalQuestion1.addEventListener("click", (e) => {
-  if (e.target.matches(".q1BtnBuying")) {
-    state.buyingOnly = true;
-    toggleForm(state.buyingOnly);
-  } else if (e.target.matches(".q1BtnBuyingSelling")) {
-    state.buyingOnly = false;
-    toggleForm(state.buyingOnly);
-  }
+listen(".q1BtnBuying", "click", () => {
+  state.buyingOnly = true;
+  toggleForm(state.buyingOnly);
+});
+listen(".q1BtnBuyingSelling", "click", () => {
+  state.buyingOnly = false;
+  toggleForm(state.buyingOnly);
 });
 
-elements.modalFixedOrNotQ.addEventListener("click", (e) => {
-  if (e.target.matches("#rateNotFixedBtn")) {
-    state.rateFixed = false;
-    elements.formOldRateDiv.parentNode.removeChild(elements.formOldRateDiv);
-    elements.modalOldRateQ.parentNode.removeChild(elements.modalOldRateQ);
-    elements.modalMortgageBalanceBtn.setAttribute("href", "#rateQ");
-  } else if (e.target.matches("#rateFixedBtn")) {
-    state.rateFixed = true;
-  }
+//
+
+listen("#rateNotFixedBtn", "click", () => {
+  state.rateFixed = false;
+  elements.formOldRateDiv.parentNode.removeChild(elements.formOldRateDiv);
+  elements.modalOldRateQ.parentNode.removeChild(elements.modalOldRateQ);
+  elements.modalMortgageBalanceBtn.setAttribute("href", "#rateQ");
 });
+listen("#rateFixedBtn", "click", () => {
+  state.rateFixed = true;
+});
+
 //2. Setting the cursor ready inside input
 
 window.addEventListener("hashchange", () => {
@@ -43,36 +45,43 @@ window.addEventListener("hashchange", () => {
 
 //3. Validation for - HousePrice, Deposit, selling price  Validate [number only, seperator put in, and toggle button]
 
-validation("#housePriceQ input").number(
-  elements.modalHousePriceBtn,
-  20000,
-  999999999
-);
-validation(".deposit").number(elements.modalDepositBtn, 10000, 999999999);
-validation(".sellingPrice").number(
-  elements.modalSellingPriceBtn,
-  10000,
-  999999999
-);
-validation(".mortgageBalance").number(
-  elements.modalMortgageBalanceBtn,
-  10000,
-  999999999
-);
+validation(".housePrice", "number", elements.modalHousePriceBtn, {
+  min: 2000,
+  max: 99000000,
+});
+validation(".deposit", "number", elements.modalDepositBtn, {
+  min: 2000,
+  max: 99000000,
+});
+validation(".sellingPrice", "number", elements.modalSellingPriceBtn, {
+  min: 2000,
+  max: 99000000,
+});
+validation(".mortgageBalance", "number", elements.modalMortgageBalanceBtn, {
+  min: 2000,
+  max: 99000000,
+});
 
 //4. rate Validation
-validation(".rate").float(elements.modalRateBtn, 0.2, 4);
-validation(".oldRate").float(elements.modalOldRateBtn, 0.2, 4);
+validation(".rate", "float", elements.modalRateBtn, {
+  min: 0.2,
+  max: 4,
+});
+validation(".oldRate", "float", elements.modalOldRateBtn, {
+  min: 0.2,
+  max: 4,
+});
 
 //5. term time validation
-validation(".termTime").number(elements.modalSubmit, 10, 40);
-validation(".termTime").listen("keyup", () => {
+validation(".termTime", "number", elements.modalSubmit, {
+  min: 10,
+  max: 40,
+});
+
+listen(".termTime", "keyup", () => {
   if (elements.modalSubmit.classList.contains("disabled")) {
-    console.log("submit disabled");
     elements.modalSubmit.disabled = true;
   } else {
-    console.log("submit not disabled");
-
     elements.modalSubmit.disabled = false;
   }
 });

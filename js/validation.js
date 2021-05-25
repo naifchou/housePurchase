@@ -1,4 +1,4 @@
-export const validation = (selector) => {
+export const validation = (selector, type, btn, range) => {
   const self = {
     element: document.querySelector(selector),
     html: () => self.element,
@@ -72,6 +72,12 @@ export const validation = (selector) => {
       }
     },
   };
+
+  if (type == "number") {
+    self.number(btn, range.min, range.max);
+  } else if (type == "float") {
+    self.float(btn, range.min, range.max);
+  }
 
   return self;
 };

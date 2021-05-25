@@ -65,9 +65,9 @@
                 opacity: 0;
                 visibility: hidden;
 
-                // .disabled {
-                //     pointer-events: none;
-                // }
+                .disabled {
+                    pointer-events: none;
+                }
 
                 span {
                     display: block;
