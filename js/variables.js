@@ -22,6 +22,7 @@ export const elements = {
   modalMortgageBalanceBtn: document.querySelector("#mortgageBalanceBtn"),
 
   modalSubmit: document.querySelector(".submit"),
+  modalForm: document.querySelector(".houseModal__body"),
 
   firstForm: document.querySelector(".firstForm"),
   formHousePrice: document.querySelector(".formPurchasePrice"),
