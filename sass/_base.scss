@@ -12,7 +12,9 @@ html {
 
 body {
     box-sizing: border-box;
-    background-color: #2a6d7ecc;
+    // background-color: #2a6d7ecc;
+    background-image: linear-gradient(to right bottom, rgba(44, 62, 80, 0.9), hsla(188, 39%, 49%, 0.902)), url(/img/house.jpg);
+    background-size: cover;
 }
 
 .firstForm {
@@ -20,10 +22,12 @@ body {
 }
 
 .container {
-    background-image: linear-gradient(to right bottom, rgba(44, 62, 80, 0.9), hsla(188, 39%, 49%, 0.902)), url(/img/house.jpg);
-    background-size: cover;
-    height: auto;
+    border: 1px solid red;
+    
+    height: 1000px;
+    width: auto;
     // clip-path: polygon(0 0, 100% 0, 100% 33%, 52% 52%, 99% 100%, 0 100%);
-
 }
+
+
 

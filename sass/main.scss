@@ -1,9 +1,9 @@
 @import "variables";
 
 //I learnt this needs to be imported before other files
+@import "mixin";
 
 @import "base";
-@import "mixin";
 @import "animations";
 @import "header";
 @import "typography";

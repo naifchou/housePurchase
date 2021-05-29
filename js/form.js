@@ -30,8 +30,7 @@ export const toggleForm = (onlyBuying) => {
   } else {
     elements.modalDepositBtn.setAttribute("href", "#rateQ");
   }
-  elements.modalQuestion1.style.visibility = "hidden";
-  elements.modalQuestion1.style.opacity = 0;
+  elements.modalQuestion1.style.display = "none";
 };
 
 export const calcFormValues = (state) => {

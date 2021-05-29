@@ -1,7 +1,9 @@
 export const elements = {
-  theModal: document.querySelector(".houseModal"),
-  modalQuestion1: document.querySelector(".houseModal__body__question--1"),
-  modalFixedOrNotQ: document.querySelector(".houseModal__body__question--4"),
+  callModal: document.querySelector(".call-modal"),
+
+  theModal: document.querySelector(".house-modal"),
+  modalQuestion1: document.querySelector(".house-modal__body__question--1"),
+  modalFixedOrNotQ: document.querySelector(".house-modal__body__question--4"),
   modalOldRateQ: document.querySelector("#oldRateQ"),
   modalHousePrice: document.querySelector(".housePrice"),
   modalSellingPrice: document.querySelector(".sellingPrice"),
@@ -22,7 +24,7 @@ export const elements = {
   modalMortgageBalanceBtn: document.querySelector("#mortgageBalanceBtn"),
 
   modalSubmit: document.querySelector(".submit"),
-  modalForm: document.querySelector(".houseModal__body"),
+  modalForm: document.querySelector(".house-modal__body"),
 
   firstForm: document.querySelector(".firstForm"),
   formHousePrice: document.querySelector(".formPurchasePrice"),

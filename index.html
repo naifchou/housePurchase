@@ -17,21 +17,22 @@
                     <h1 class="header__heading">Property Purchase</h1>
                 </div>
             </div>
+            
 
-            <div class="houseModal">
-               <div class="houseModal__content">
-                    <div class="houseModal__header">
+            <div class="house-modal">
+               <div class="house-modal__content">
+                    <div class="house-modal__header">
                         <h1>House Purchase</h1>
                     </div>
 
 
-                    <form action="/index.html" class="houseModal__body">
-                        <div class="houseModal__body__question houseModal__body__question--1">
+                    <form action="/index.html" class="house-modal__body">
+                        <div class="house-modal__body__question house-modal__body__question--1" id="firstQuestion">
                             <span>Are you buying only or buying and selling?</span>
                             <a href="#housePriceQ" class="q1Btn q1BtnBuying">Just Buying</a>
                             <a href="#housePriceQ" class="q1Btn q1BtnBuyingSelling">Buying and Selling</a>
                         </div>
-                        <div class="houseModal__body__question houseModal__body__question--2" id="housePriceQ">
+                        <div class="house-modal__body__question house-modal__body__question--2" id="housePriceQ">
                             <span>Purchase Price of the house?</span>
                             <div class="inputContainer">
                                 <span>£</span>
@@ -39,7 +40,7 @@
                             </div>
                             <a href="#depositQ" id = "housePriceBtn" class="button disabled">Next</a>
                         </div>
-                        <div class="houseModal__body__question houseModal__body__question--3" id="depositQ">
+                        <div class="house-modal__body__question house-modal__body__question--3" id="depositQ">
                             <span>What is the cash deposit amount you plan to put in?</span>
                             <div class="inputContainer">
                                 <span>£</span>
@@ -47,12 +48,12 @@
                             </div>
                             <a href="#fixedOrNotQ" id = "depositBtn" class="button disabled">Next</a>
                         </div>
-                        <div class="houseModal__body__question houseModal__body__question--4" id="fixedOrNotQ">
+                        <div class="house-modal__body__question house-modal__body__question--4" id="fixedOrNotQ">
                             <span>Is your current Mortgage Fixed?</span>
                             <a href="#sellingPriceQ" id = "rateNotFixedBtn" class="q1Btn">Not Fixed</a>
                             <a href="#sellingPriceQ" class="q1Btn" id = "rateFixedBtn">Fixed</a>
                         </div>
-                        <div class="houseModal__body__question houseModal__body__question--5" id="sellingPriceQ">
+                        <div class="house-modal__body__question house-modal__body__question--5" id="sellingPriceQ">
                             <span>What is the selling price of your house?</span>
                             <div class="inputContainer">
                                 <span>£</span>
@@ -60,7 +61,7 @@
                             </div>
                             <a href="#mortgageBalanceQ" id = "sellingPriceBtn" class="button disabled">Next</a>
                         </div>
-                        <div class="houseModal__body__question houseModal__body__question--6" id="mortgageBalanceQ">
+                        <div class="house-modal__body__question house-modal__body__question--6" id="mortgageBalanceQ">
                             <span>What is the current Mortage Balance ?</span>
                             <div class="inputContainer">
                                 <span>£</span>
@@ -68,7 +69,7 @@
                             </div>
                             <a href="#oldRateQ" id = "mortgageBalanceBtn" class="button disabled">Next</a>
                         </div> 
-                        <div class="houseModal__body__question houseModal__body__question--7" id="oldRateQ">
+                        <div class="house-modal__body__question house-modal__body__question--7" id="oldRateQ">
                             <span>What is mortgage rate currently for the house being sold?</span>
                             <div class="inputContainer">
                                 <span>£</span>
@@ -76,14 +77,14 @@
                             </div>
                             <a href="#rateQ" id = "oldRateBtn" class="button disabled">Next</a>
                         </div> 
-                        <div class="houseModal__body__question houseModal__body__question--8" id="rateQ">
+                        <div class="house-modal__body__question house-modal__body__question--8" id="rateQ">
                             <span>What is the new Mortage rate being offered?</span>
                             <div class="inputContainer">
                                 <input type="text" maxlength = "4" class="rate">
                             </div>
                             <a href="#termTimeQ" id ="rateBtn" class="button disabled">Next</a>
                         </div>
-                        <div class="houseModal__body__question houseModal__body__question--9" id="termTimeQ">
+                        <div class="house-modal__body__question house-modal__body__question--9" id="termTimeQ">
                             <span>And what is the term time of this mortgage offer?</span>
                             <div class="inputContainer">
                                 <input type="text" maxlength = "2" class="termTime">
@@ -94,58 +95,209 @@
 
                </div> 
             </div>
+            <div class="container-inner">
 
-
-            <div class="firstForm">
-                <div class="firstForm__container firstForm__container--1">
-                    <div class="housePriceDiv">
-                        <label>House Purchase Price:</label>
-                        <input type="text" class="formPurchasePrice">
-                    </div> 
-                 
-                    <div>
-                        <label>Planned Deposit Payment </label>
-                        <input type="text" class="formDeposit">
+                <div class="firstForm">
+                    <div class="firstForm__container firstForm__container--1">
+                        <div class="housePriceDiv">
+                            <label>House Purchase Price:</label>
+                            <input type="text" class="formPurchasePrice">
+                        </div> 
+                     
+                        <div>
+                            <label>Planned Deposit Payment </label>
+                            <input type="text" class="formDeposit">
+                        </div>
                     </div>
-                </div>
+        
+                    <div class="firstForm__container firstForm__container--3">
     
-                <div class="firstForm__container firstForm__container--3">
-
-                    <div>
-                        <label >New Mortgage amount:</label>
-                        <input type="text" class="formNewMortgageAmount">
+                        <div>
+                            <label >New Mortgage amount:</label>
+                            <input type="text" class="formNewMortgageAmount">
+                        </div>
+                        <div>   
+                            <label >New Mortage Rate offered:</label>
+                            <input type="text" class="formRate">
+                        </div>
+                        <div>   
+                            <label ">Mortage Term Time:</label>
+                            <input type="text" class="formTerm">
+                        </div>
                     </div>
-                    <div>   
-                        <label >New Mortage Rate offered:</label>
-                        <input type="text" class="formRate">
-                    </div>
-                    <div>   
-                        <label ">Mortage Term Time:</label>
-                        <input type="text" class="formTerm">
-                    </div>
-                </div>
-            
                 
-                <div class="firstForm__container firstForm__container--4">
-                    <div>
-                        <label>Stamp Duty:</label>
-                        <input type="text" class="formStampDuty">
+                    
+                    <div class="firstForm__container firstForm__container--4">
+                        <div>
+                            <label>Stamp Duty:</label>
+                            <input type="text" class="formStampDuty">
+                        </div>
+                    </div>
+    
+                    <div class="firstForm__container firstForm__container--5">
+                        <div>
+                            <label>Total Cash Payment:</label>
+                            <input type="text" class="formTotalCash">
+                        </div>
+                        <div>
+                            <label>Monthly Mortgage Payment</label>
+                            <input type="text" class="formMonthlyMortgage">
+                        </div>
                     </div>
                 </div>
+                <!-- <div class="firstForm">
+                    <div class="firstForm__container firstForm__container--1">
+                        <div class="housePriceDiv">
+                            <label>House Purchase Price:</label>
+                            <input type="text" class="formPurchasePrice">
+                        </div> 
+                     
+                        <div>
+                            <label>Planned Deposit Payment </label>
+                            <input type="text" class="formDeposit">
+                        </div>
+                    </div>
+        
+                    <div class="firstForm__container firstForm__container--3">
+    
+                        <div>
+                            <label >New Mortgage amount:</label>
+                            <input type="text" class="formNewMortgageAmount">
+                        </div>
+                        <div>   
+                            <label >New Mortage Rate offered:</label>
+                            <input type="text" class="formRate">
+                        </div>
+                        <div>   
+                            <label ">Mortage Term Time:</label>
+                            <input type="text" class="formTerm">
+                        </div>
+                    </div>
+                
+                    
+                    <div class="firstForm__container firstForm__container--4">
+                        <div>
+                            <label>Stamp Duty:</label>
+                            <input type="text" class="formStampDuty">
+                        </div>
+                    </div>
+    
+                    <div class="firstForm__container firstForm__container--5">
+                        <div>
+                            <label>Total Cash Payment:</label>
+                            <input type="text" class="formTotalCash">
+                        </div>
+                        <div>
+                            <label>Monthly Mortgage Payment</label>
+                            <input type="text" class="formMonthlyMortgage">
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="firstForm">
+                    <div class="firstForm__container firstForm__container--1">
+                        <div class="housePriceDiv">
+                            <label>House Purchase Price:</label>
+                            <input type="text" class="formPurchasePrice">
+                        </div> 
+                     
+                        <div>
+                            <label>Planned Deposit Payment </label>
+                            <input type="text" class="formDeposit">
+                        </div>
+                    </div>
+        
+                    <div class="firstForm__container firstForm__container--3">
+    
+                        <div>
+                            <label >New Mortgage amount:</label>
+                            <input type="text" class="formNewMortgageAmount">
+                        </div>
+                        <div>   
+                            <label >New Mortage Rate offered:</label>
+                            <input type="text" class="formRate">
+                        </div>
+                        <div>   
+                            <label ">Mortage Term Time:</label>
+                            <input type="text" class="formTerm">
+                        </div>
+                    </div>
+                
+                    
+                    <div class="firstForm__container firstForm__container--4">
+                        <div>
+                            <label>Stamp Duty:</label>
+                            <input type="text" class="formStampDuty">
+                        </div>
+                    </div>
+    
+                    <div class="firstForm__container firstForm__container--5">
+                        <div>
+                            <label>Total Cash Payment:</label>
+                            <input type="text" class="formTotalCash">
+                        </div>
+                        <div>
+                            <label>Monthly Mortgage Payment</label>
+                            <input type="text" class="formMonthlyMortgage">
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="firstForm">
+                    <div class="firstForm__container firstForm__container--1">
+                        <div class="housePriceDiv">
+                            <label>House Purchase Price:</label>
+                            <input type="text" class="formPurchasePrice">
+                        </div> 
+                     
+                        <div>
+                            <label>Planned Deposit Payment </label>
+                            <input type="text" class="formDeposit">
+                        </div>
+                    </div>
+        
+                    <div class="firstForm__container firstForm__container--3">
+    
+                        <div>
+                            <label >New Mortgage amount:</label>
+                            <input type="text" class="formNewMortgageAmount">
+                        </div>
+                        <div>   
+                            <label >New Mortage Rate offered:</label>
+                            <input type="text" class="formRate">
+                        </div>
+                        <div>   
+                            <label ">Mortage Term Time:</label>
+                            <input type="text" class="formTerm">
+                        </div>
+                    </div>
+                
+                    
+                    <div class="firstForm__container firstForm__container--4">
+                        <div>
+                            <label>Stamp Duty:</label>
+                            <input type="text" class="formStampDuty">
+                        </div>
+                    </div>
+    
+                    <div class="firstForm__container firstForm__container--5">
+                        <div>
+                            <label>Total Cash Payment:</label>
+                            <input type="text" class="formTotalCash">
+                        </div>
+                        <div>
+                            <label>Monthly Mortgage Payment</label>
+                            <input type="text" class="formMonthlyMortgage">
+                        </div>
+                    </div>
+                </div> -->
+                <a href="#firstQuestion" class="call-modal"> Add Purchase Scenario - 1</a>
 
-                <div class="firstForm__container firstForm__container--5">
-                    <div>
-                        <label>Total Cash Payment:</label>
-                        <input type="text" class="formTotalCash">
-                    </div>
-                    <div>
-                        <label>Monthly Mortgage Payment</label>
-                        <input type="text" class="formMonthlyMortgage">
-                    </div>
-                </div>
             </div>
         </div>
 
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
     <script src="/js/index.js"></script>
 
     </body>
