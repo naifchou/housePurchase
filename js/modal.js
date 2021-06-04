@@ -37,7 +37,7 @@ export const callModal = (state) => {
     }
   });
 
-  //3. Validation for - HousePrice, Deposit, selling price  Validate [number only, seperator put in, and toggle button]
+  //3. Validation (takes selector, type - number or float, and button to toggle)
 
   validation(".housePrice", "number", elements.modalHousePriceBtn, {
     min: 2000,

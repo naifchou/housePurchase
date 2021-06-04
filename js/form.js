@@ -5,7 +5,6 @@ import { firebaseConfig } from "./firebaseConfig";
 import "regenerator-runtime/runtime";
 
 export const loadForm = (counter) => {
-  console.log(counter);
   if (counter > 0) {
     for (let i = 1; i <= counter; i++) {
       let form = document.querySelector(`.form--${i}`);
