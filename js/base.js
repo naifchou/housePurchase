@@ -1,3 +1,7 @@
+import "regenerator-runtime/runtime";
+import { loadForm } from "./form";
+import { elements } from "./variables";
+
 export const listen = (selector, type, callback) => {
   const self = {
     element: document.querySelector(selector),

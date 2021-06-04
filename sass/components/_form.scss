@@ -10,13 +10,16 @@
 }
 
 
-.firstForm {
+.form {
     grid-row: 2 / 3;
     width: 27rem;
     margin: 0.1rem 0.5rem;
     position: relative;
     animation: moveUp 2s ease-out;
-    display: none;
+
+    &--1, &--2, &--3, &--4{
+        display: none;
+    }
     &__container {
 
         background-color: rgba($color-grey-dark-2, 0.4);

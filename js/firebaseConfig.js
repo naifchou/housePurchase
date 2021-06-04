@@ -1,6 +1,8 @@
 export let firebaseConfig = {
   apiKey: "AIzaSyC7uD176kMJTedZtbl4EDtbs2hZoDT057M",
   authDomain: "housepurchase.firebaseapp.com",
+  databaseURL:
+    "https://housepurchase-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "housepurchase",
   storageBucket: "housepurchase.appspot.com",
   messagingSenderId: "40016422170",

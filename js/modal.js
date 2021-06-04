@@ -3,18 +3,16 @@ import { calcFormValues, toggleForm } from "../js/form";
 import { elements } from "./variables";
 import { listen } from "./base";
 
-export const callModal = () => {
-  const state = {};
-
+export const callModal = (state) => {
   //1. Hide Q1 in Modal to start series of next quesitons (controlled from within scss) and toggle form
 
   listen(".q1BtnBuying", "click", () => {
     state.buyingOnly = true;
-    toggleForm(state.buyingOnly);
+    toggleForm(state.buyingOnly, state.counter + 1);
   });
   listen(".q1BtnBuyingSelling", "click", () => {
     state.buyingOnly = false;
-    toggleForm(state.buyingOnly);
+    toggleForm(state.buyingOnly, state.counter + 1);
   });
 
   //
@@ -87,10 +85,11 @@ export const callModal = () => {
 
   elements.modalForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    elements.firstForm.style.display = "inline-block";
+    let nextForm = document.querySelector(`.form--${state.counter + 1}`);
+    nextForm.style.display = "inline-block";
     elements.theModal.style.display = "none";
     elements.callModal.style.display = "inline-block";
-
-    calcFormValues(state);
+    state.counter = state.counter + 1;
+    calcFormValues(state, state.counter);
   });
 };

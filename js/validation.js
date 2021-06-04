@@ -51,7 +51,6 @@ export const validation = (selector, type, btn, range) => {
     },
 
     deleteLastKeypress: () => {
-      console.log("it's me");
       self.element.value = self.element.value.substring(
         0,
         self.element.value.length - 1
