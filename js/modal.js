@@ -7,12 +7,12 @@ export const callModal = (state) => {
   //1. Hide Q1 in Modal to start series of next quesitons (controlled from within scss) and toggle form
 
   listen(".q1BtnBuying", "click", () => {
-    state.buyingOnly = true;
-    toggleForm(state.buyingOnly, state.counter + 1);
+    // state.buyingOnly = true;
+    toggleForm(true, state.counter + 1);
   });
   listen(".q1BtnBuyingSelling", "click", () => {
-    state.buyingOnly = false;
-    toggleForm(state.buyingOnly, state.counter + 1);
+    // state.buyingOnly = false;
+    toggleForm(false, state.counter + 1);
   });
 
   //

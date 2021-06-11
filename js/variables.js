@@ -26,6 +26,8 @@ export const elements = {
   modalSubmit: document.querySelector(".submit"),
   modalForm: document.querySelector(".house-modal__body"),
 
+  loader: `<div class="loader"></div>`,
+
   formMarkup: `<div class="form__container form__container--1">
               <div class="housePriceDiv">
                   <label>House Purchase Price:</label>
