@@ -1,24 +1,24 @@
 [
     {
-        "selector" : ".housePrice",
+        "selector" : ".house-price",
         "type" : "number",
-        "button" : "#housePriceBtn",
+        "button" : "#house-price-btn",
         "range" : {"min": 2000, "max": 99000000}
     },
     {
         "selector" : ".deposit",
         "type" : "number",
-        "button" : "#depositBtn",
+        "button" : "#deposit-btn",
         "range" : {"min": 2000, "max": 99000000}
     },
     {
-        "selector" : ".sellingPrice",
+        "selector" : ".selling-price",
         "type" : "number",
         "button" : "#sellingPriceBtn",
         "range" : {"min": 2000, "max": 99000000}
     },
     {
-        "selector" : ".mortgageBalance",
+        "selector" : ".mortgage-balance",
         "type" : "number",
         "button" : "#mortgageBalanceBtn",
         "range" : {"min": 2000, "max": 99000000}
@@ -26,13 +26,13 @@
     {
         "selector" : ".rate",
         "type" : "float",
-        "button" : "#rateBtn",
+        "button" : "#rate-btn",
         "range" : {"min": 2000, "max": 99000000}
     },
     {
-        "selector" : ".oldRate",
+        "selector" : ".old-rate",
         "type" : "float",
-        "button" : "#oldRateBtn",
+        "button" : "#old-rate-btn",
         "range" : {"min": 2000, "max": 99000000}
     },
     {

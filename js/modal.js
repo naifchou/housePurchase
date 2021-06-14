@@ -11,22 +11,22 @@ export const callModal = (state) => {
   elements.modalQuestion1.style.display = "inline-block";
   //1. Hide Q1 in Modal to start series of next quesitons (controlled from within scss) and toggle form
 
-  listen(".q1BtnBuying", "click", () => {
+  listen(".q1-Btn-Buying", "click", () => {
     state.buyingOnly = true;
     toggleForm(state.buyingOnly, state.counter + 1);
   });
 
-  listen(".q1BtnBuyingSelling", "click", () => {
+  listen(".q1-Btn-Buying-Selling", "click", () => {
     state.buyingOnly = false;
     toggleForm(state.buyingOnly, state.counter + 1);
   });
 
   //
 
-  listen("#rateNotFixedBtn", "click", () => {
+  listen("#rate-not-fixed-btn", "click", () => {
     toggleForm2(false, state.counter + 1);
   });
-  listen("#rateFixedBtn", "click", () => {
+  listen("#rate-fixed-btn", "click", () => {
     state.rateFixed = true;
   });
 

@@ -4,22 +4,21 @@ export const elements = {
   theModal: document.querySelector(".house-modal"),
   modalQuestion1: document.querySelector(".house-modal__body__question--1"),
   modalFixedOrNotQ: document.querySelector(".house-modal__body__question--4"),
-  modalOldRateQ: document.querySelector("#oldRateQ"),
-  modalHousePrice: document.querySelector(".housePrice"),
-  modalSellingPrice: document.querySelector(".sellingPrice"),
+  modalOldRateQ: document.querySelector("#old-rate-q"),
+  modalHousePrice: document.querySelector(".house-price"),
+  modalSellingPrice: document.querySelector(".selling-price"),
   modalDeposit: document.querySelector(".deposit"),
-  modalMortgageBalance: document.querySelector(".mortgageBalance"),
+  modalMortgageBalance: document.querySelector(".mortgage-balance"),
 
   modalRate: document.querySelector(".rate"),
-  modalOldRate: document.querySelector(".oldRate"),
+  modalOldRate: document.querySelector(".old-rate"),
 
   modalTermTime: document.querySelector(".termTime"),
 
-  modalq1Btn: document.querySelector("#q1Btn"),
-  modalHousePriceBtn: document.querySelector("#housePriceBtn"),
-  modalDepositBtn: document.querySelector("#depositBtn"),
-  modalOldRateBtn: document.querySelector("#oldRateBtn"),
-  modalRateBtn: document.querySelector("#rateBtn"),
+  modalHousePriceBtn: document.querySelector("#house-price-btn"),
+  modalDepositBtn: document.querySelector("#deposit-btn"),
+  modalOldRateBtn: document.querySelector("#old-rate-btn"),
+  modalRateBtn: document.querySelector("#rate-btn"),
   modalSellingPriceBtn: document.querySelector("#sellingPriceBtn"),
   modalMortgageBalanceBtn: document.querySelector("#mortgageBalanceBtn"),
 
@@ -93,25 +92,25 @@ export const elements = {
 
   validationObject: `[
     {
-        "selector" : ".housePrice",
+        "selector" : ".house-price",
         "type" : "number",
-        "button" : "#housePriceBtn",
+        "button" : "#house-price-btn",
         "range" : {"min": 2000, "max": 99000000}
     },
     {
         "selector" : ".deposit",
         "type" : "number",
-        "button" : "#depositBtn",
+        "button" : "#deposit-btn",
         "range" : {"min": 2000, "max": 99000000}
     },
     {
-        "selector" : ".sellingPrice",
+        "selector" : ".selling-price",
         "type" : "number",
         "button" : "#sellingPriceBtn",
         "range" : {"min": 2000, "max": 99000000}
     },
     {
-        "selector" : ".mortgageBalance",
+        "selector" : ".mortgage-balance",
         "type" : "number",
         "button" : "#mortgageBalanceBtn",
         "range" : {"min": 2000, "max": 99000000}
@@ -119,13 +118,13 @@ export const elements = {
     {
         "selector" : ".rate",
         "type" : "float",
-        "button" : "#rateBtn",
+        "button" : "#rate-btn",
         "range" : {"min": 0.2, "max": 4}
     },
     {
-        "selector" : ".oldRate",
+        "selector" : ".old-rate",
         "type" : "float",
-        "button" : "#oldRateBtn",
+        "button" : "#old-rate-btn",
         "range" : {"min": 0.2, "max": 4}
     },
     {
