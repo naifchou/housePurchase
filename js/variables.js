@@ -91,6 +91,51 @@ export const elements = {
               <input type="text" class="formSellingPrice">
             </div> `,
 
+  validationObject: `[
+    {
+        "selector" : ".housePrice",
+        "type" : "number",
+        "button" : "#housePriceBtn",
+        "range" : {"min": 2000, "max": 99000000}
+    },
+    {
+        "selector" : ".deposit",
+        "type" : "number",
+        "button" : "#depositBtn",
+        "range" : {"min": 2000, "max": 99000000}
+    },
+    {
+        "selector" : ".sellingPrice",
+        "type" : "number",
+        "button" : "#sellingPriceBtn",
+        "range" : {"min": 2000, "max": 99000000}
+    },
+    {
+        "selector" : ".mortgageBalance",
+        "type" : "number",
+        "button" : "#mortgageBalanceBtn",
+        "range" : {"min": 2000, "max": 99000000}
+    },
+    {
+        "selector" : ".rate",
+        "type" : "float",
+        "button" : "#rateBtn",
+        "range" : {"min": 0.2, "max": 4}
+    },
+    {
+        "selector" : ".oldRate",
+        "type" : "float",
+        "button" : "#oldRateBtn",
+        "range" : {"min": 0.2, "max": 4}
+    },
+    {
+        "selector" : ".termTime",
+        "type" : "number",
+        "button" : ".submit",
+        "range" : {"min": 10, "max": 40}
+    }
+]`,
+
   add: (counter) => {
     elements[`form${counter}`] = document.querySelector(`.form--${counter}`);
 

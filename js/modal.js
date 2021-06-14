@@ -40,40 +40,9 @@ export const callModal = (state) => {
     }
   });
 
-  //3. Validation (takes selector, type - number or float, and button to toggle)
+  //3. Validation
 
-  validation(".housePrice", "number", elements.modalHousePriceBtn, {
-    min: 2000,
-    max: 99000000,
-  });
-  validation(".deposit", "number", elements.modalDepositBtn, {
-    min: 2000,
-    max: 99000000,
-  });
-  validation(".sellingPrice", "number", elements.modalSellingPriceBtn, {
-    min: 2000,
-    max: 99000000,
-  });
-  validation(".mortgageBalance", "number", elements.modalMortgageBalanceBtn, {
-    min: 2000,
-    max: 99000000,
-  });
-
-  //4. rate Validation
-  validation(".rate", "float", elements.modalRateBtn, {
-    min: 0.2,
-    max: 4,
-  });
-  validation(".oldRate", "float", elements.modalOldRateBtn, {
-    min: 0.2,
-    max: 4,
-  });
-
-  //5. term time validation
-  validation(".termTime", "number", elements.modalSubmit, {
-    min: 10,
-    max: 40,
-  });
+  validation(JSON.parse(elements.validationObject));
 
   //6. Toggle submit enable/disable
   listen(".termTime", "keyup", () => {
