@@ -1,14 +1,27 @@
-.firstForm {
-    display: inline-block;
-    width: auto;
-    margin: 4rem 4rem;
-   
+.container-inner {
+    height: 100vh;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1rem 6rem 1fr;
+    grid-row-gap: 1rem;
+    grid-column-gap: 1.2rem;
+    
+}
+
+
+.form {
+    grid-row: 2 / 3;
+    width: 27rem;
+    margin: 0.1rem 0.5rem;
     position: relative;
     animation: moveUp 2s ease-out;
-    display: none;
 
+    &--1, &--2, &--3, &--4{
+        display: none;
+    }
     &__container {
-  
+
         background-color: rgba($color-grey-dark-2, 0.4);
         border-radius: 1rem;
         padding: 1rem 0;
@@ -27,6 +40,7 @@
     input {
         border: none;
         font-size: 2rem;
+        color: $color-grey-dark;
         margin: 1rem 1.5rem;
         padding: 0.5rem 1.5rem;
         background-color: $color-grey-light-2;
@@ -38,6 +52,13 @@
     }
 
    }
+
+.call-modal { 
+    grid-row: 2/3;
+    // grid-column: 2 / 3;
+    @include button;
+    justify-self: center;
+}
    
   
   

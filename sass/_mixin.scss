@@ -7,14 +7,16 @@
 
 
 @mixin button{
-    font-size: 1.5rem;
+   
+    font-size: 1.2rem;
     color: $color-grey-dark-3;
+    text-align: center;
 
     text-transform: uppercase;
     text-decoration: none;
     display: inline-block;
-    width: 25rem;
-    padding: 1.5rem 4rem;
+    width: 20rem;
+    padding: 2rem 2rem;
     border-radius: 10rem; 
     background-color: rgba($color-white,0.8);
 

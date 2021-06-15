@@ -1,4 +1,4 @@
-.houseModal {
+.house-modal {
     height: 100vh;
     width: 100%;
     position: fixed;
@@ -6,7 +6,7 @@
     left: 0%;
     background-color: rgba($color-black, .8); // make sure no space after rgba
     z-index: 999999;
-   
+    display: none;
 
     &__content {
         @include centerItem;
@@ -65,9 +65,9 @@
                 opacity: 0;
                 visibility: hidden;
 
-                // .disabled {
-                //     pointer-events: none;
-                // }
+                .disabled {
+                    pointer-events: none;
+                }
 
                 span {
                     display: block;
