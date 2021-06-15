@@ -1,4 +1,4 @@
-.firstTimeBuyer {
+.firstForm {
     display: inline-block;
     width: auto;
     margin: 4rem 4rem;
@@ -7,28 +7,21 @@
     animation: moveUp 2s ease-out;
     display: none;
 
-    &__form {
-        display: inline-block;
-        width: 100%;
-        height: 100%;
+    &__container {
+  
         background-color: rgba($color-grey-dark-2, 0.4);
         border-radius: 1rem;
         padding: 1rem 0;
+        margin-bottom: 2rem;
              
     }
-    
-    &__calculations {
-        margin-top: 3rem;
-        background-color: rgba($color-grey-dark-2, 0.4);
-        border-radius: 1rem; 
-        padding: 1rem 0;
-    }    
 
-    &__stampDuty {
-        margin-top: 3rem;
-        background-color: rgba($color-grey-dark-2, 0.4);
-        border-radius: 1rem; 
-        padding: 1rem 0;
+    label {
+        display: block; 
+        font-weight: 200;
+        margin-left: 2rem;
+        font-size: 1.2rem;
+        padding: .5 rem;
     }
 
     input {
@@ -42,14 +35,6 @@
         &:focus {
             outline: none;
         }
-    }
-
-    label {
-        display: block; 
-        font-weight: 200;
-        margin-left: 2rem;
-        font-size: 1.3rem;
-        padding: .5 rem;
     }
 
    }
