@@ -42,7 +42,12 @@ export const elements = {
             <div class="form__container form__container--3">
 
               <div>
-                  <label >New Mortgage amount:</label>
+                  <label >New Mortgage amount:
+                    <span class="material-icons icon-info-mortgage">
+                    info
+                    </span>
+                  </label>
+
                   <input type="text" class="formNewMortgageAmount">
               </div>
               <div>   
