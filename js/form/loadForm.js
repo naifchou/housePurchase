@@ -56,6 +56,7 @@ const getData = async (counter) => {
   const buyingOnly = snapshot.val().BuyingOnly;
   if (buyingOnly == "false") {
     loadFormExtra(counter);
+
     elements.add(counter);
     elements[`formSellingPrice${counter}`].value = snapshot.val().SellingPrice;
     elements[

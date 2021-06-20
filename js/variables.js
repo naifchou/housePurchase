@@ -34,7 +34,7 @@ export const elements = {
               </div> 
 
               <div>
-                  <label>Planned Deposit Payment </label>
+                  <label>Planned Cash Investment </label>
                   <input type="text" class="formDeposit">
               </div>
             </div>
@@ -42,10 +42,8 @@ export const elements = {
             <div class="form__container form__container--3">
 
               <div>
-                  <label >New Mortgage amount:
-                    <span class="material-icons icon-info-mortgage">
-                    info
-                    </span>
+                  <label class="new-mortgage-label">New Mortgage amount:
+                    
                   </label>
 
                   <input type="text" class="formNewMortgageAmount">
@@ -70,7 +68,7 @@ export const elements = {
 
             <div class="form__container form__container--5">
               <div>
-                  <label>Total Cash Payment:</label>
+                  <label class="total-cash-label" >Total Cash Payment:</label>
                   <input type="text" class="formTotalCash">
               </div>
               <div>

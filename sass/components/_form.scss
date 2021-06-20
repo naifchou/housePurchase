@@ -36,26 +36,36 @@
         font-size: 1.2rem;
         padding: .5 rem;
 
+      
+
         .icon-info-mortgage {
             margin-left: 60px;
             position: relative;
             transition: all 2s;
   
             &::before {
-                content: "the quick brown fox";
-                color: red;
+                content: attr(data-tooltip);
+                font-family:'Merriweather',serif;
+                font-size: 1.5rem;
+                color: white;
+
                 position: absolute;
+                padding: 1rem;
                 height: 250px;
                 width: 350px;
                 background: #327b8df5;
                 clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 47% 78%, 45% 100%, 26% 76%, 0% 75%);
-                // z-index: 100;
+                overflow: hidden;
+
+                z-index: 1;
                 transform: translateX(-15rem) translateY(-25rem) scale(0);
-                transition: all 1s;
+                transition: all 0.5s;
                 transform-origin: 45% 100%;
             }
   
             &:hover::before {
+                content: attr(data-tooltip);
+
                 transform: translateX(-15rem) translateY(-25rem) scale(1);
             }
         }
