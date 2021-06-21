@@ -1,4 +1,5 @@
 import { elements } from "../variables";
+import { loadTooltip } from "./loadTooltip";
 import { getMonthlyPayment } from "./mortgageCalc";
 import { calcStampDuty } from "./stampDuty";
 import { firebaseConfig } from "../firebaseConfig";
@@ -54,6 +55,7 @@ const getData = async (counter) => {
     `formMonthlyMortgage${counter}`
   ].value = snapshot.val().MonthlyPayment;
   const buyingOnly = snapshot.val().BuyingOnly;
+
   if (buyingOnly == "false") {
     loadFormExtra(counter);
 
@@ -64,4 +66,5 @@ const getData = async (counter) => {
     ].value = snapshot.val().MortgageBalance;
     elements[`formOldRate${counter}`].value = snapshot.val().OldRate;
   }
+  loadTooltip(buyingOnly, elements.tooltipMarkup, counter);
 };

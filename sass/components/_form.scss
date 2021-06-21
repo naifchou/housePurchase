@@ -38,7 +38,7 @@
 
       
 
-        .icon-info-mortgage {
+        .icon-info {
             margin-left: 60px;
             position: relative;
             transition: all 2s;
@@ -47,26 +47,39 @@
                 content: attr(data-tooltip);
                 font-family:'Merriweather',serif;
                 font-size: 1.5rem;
+                padding: 2rem;
                 color: white;
+                text-align: center;
+                white-space: pre-wrap;
 
                 position: absolute;
-                padding: 1rem;
-                height: 250px;
-                width: 350px;
+                left: 50%;
+                padding: 2rem 2rem 2rem 2rem;
+                height: max-content;
+                width: max-content;
+                max-width: 250px;
                 background: #327b8df5;
-                clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 47% 78%, 45% 100%, 26% 76%, 0% 75%);
+                border-radius: 1rem;
+                
                 overflow: hidden;
 
                 z-index: 1;
-                transform: translateX(-15rem) translateY(-25rem) scale(0);
+                --scale: 0;
+                transform: translateX(-50%) translateY(-103%) scale(var(--scale));
                 transition: all 0.5s;
                 transform-origin: 45% 100%;
             }
+
+            &::after {
+                content: "";
+                width: 4rem;
+                height: 4rem;
+                background: #327b8df5;
+            }
   
             &:hover::before {
-                content: attr(data-tooltip);
+                --scale: 1;
 
-                transform: translateX(-15rem) translateY(-25rem) scale(1);
             }
         }
  

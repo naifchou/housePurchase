@@ -93,6 +93,10 @@ export const elements = {
               <input type="text" class="formSellingPrice">
             </div> `,
 
+  tooltipMarkup: `<div class="material-icons icon-info" data-tooltip = "">
+  info
+  </div>`,
+
   validationObject: `[
     {
         "selector" : ".house-price",
