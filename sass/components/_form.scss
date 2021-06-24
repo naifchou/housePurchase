@@ -26,6 +26,7 @@
         border-radius: 1rem;
         padding: 1rem 0;
         margin-bottom: 2rem;
+        display: inline-block;
              
     }
 
@@ -34,13 +35,17 @@
         font-weight: 200;
         margin-left: 2rem;
         font-size: 1.2rem;
-        padding: .5 rem;
-
+        width: 180px;
+        padding: .5rem 0;
+        position: relative;
+        
       
 
         .icon-info {
-            margin-left: 60px;
-            position: relative;
+            
+            position: absolute;
+            right: 0px;
+            bottom: 3px;
             transition: all 2s;
   
             &::before {
@@ -65,21 +70,30 @@
 
                 z-index: 1;
                 --scale: 0;
-                transform: translateX(-50%) translateY(-103%) scale(var(--scale));
+                transform: translateX(-50%) translateY(-108%) scale(var(--scale));
                 transition: all 0.5s;
                 transform-origin: 45% 100%;
             }
 
             &::after {
                 content: "";
-                width: 4rem;
-                height: 4rem;
+                position: absolute;
+                width: 2rem;
+                height: 2rem;
                 background: #327b8df5;
+                left: 50%;
+                clip-path: polygon(53% 100%, 0 0, 100% 0);
+                --scale: 0;
+                transform: translateX(-50%) translateY(-100%) scale(var(--scale));
+                transition: all 0.5s;
+
+
+
             }
   
-            &:hover::before {
+            &:hover::before,
+            &:hover::after {
                 --scale: 1;
-
             }
         }
  

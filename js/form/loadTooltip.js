@@ -1,4 +1,4 @@
-export const loadTooltip = (buyingOnly, markup, counter) => {
+export const createTooltip = (buyingOnly, markup, counter) => {
   const data = content(buyingOnly, counter);
 
   data.forEach((el, i) => {
