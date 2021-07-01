@@ -1,29 +1,39 @@
 export const elements = {
   callModal: document.querySelector(".call-modal"),
-
   theModal: document.querySelector(".house-modal"),
-  modalQuestion1: document.querySelector(".house-modal__body__question--1"),
-  modalFixedOrNotQ: document.querySelector(".house-modal__body__question--4"),
-  modalOldRateQ: document.querySelector("#old-rate-q"),
-  modalHousePrice: document.querySelector(".house-price"),
-  modalSellingPrice: document.querySelector(".selling-price"),
-  modalDeposit: document.querySelector(".deposit"),
-  modalMortgageBalance: document.querySelector(".mortgage-balance"),
 
-  modalRate: document.querySelector(".rate"),
-  modalOldRate: document.querySelector(".old-rate"),
-
-  modalTermTime: document.querySelector(".termTime"),
-
-  modalHousePriceBtn: document.querySelector("#house-price-btn"),
-  modalDepositBtn: document.querySelector("#deposit-btn"),
-  modalOldRateBtn: document.querySelector("#old-rate-btn"),
-  modalRateBtn: document.querySelector("#rate-btn"),
-  modalSellingPriceBtn: document.querySelector("#sellingPriceBtn"),
-  modalMortgageBalanceBtn: document.querySelector("#mortgageBalanceBtn"),
-
-  modalSubmit: document.querySelector(".submit"),
-  modalForm: document.querySelector(".house-modal__body"),
+  addModal: () => {
+    (elements.modalQuestion1 = document.querySelector(
+      ".house-modal__body__question--1"
+    )),
+      (elements.modalFixedOrNotQ = document.querySelector(
+        ".house-modal__body__question--4"
+      )),
+      (elements.modalOldRateQ = document.querySelector("#old-rate-q")),
+      (elements.modalHousePrice = document.querySelector(".house-price")),
+      (elements.modalSellingPrice = document.querySelector(".selling-price")),
+      (elements.modalDeposit = document.querySelector(".deposit")),
+      (elements.modalMortgageBalance = document.querySelector(
+        ".mortgage-balance"
+      )),
+      (elements.modalRate = document.querySelector(".rate")),
+      (elements.modalOldRate = document.querySelector(".old-rate")),
+      (elements.modalTermTime = document.querySelector(".termTime")),
+      (elements.modalHousePriceBtn = document.querySelector(
+        "#house-price-btn"
+      )),
+      (elements.modalDepositBtn = document.querySelector("#deposit-btn")),
+      (elements.modalOldRateBtn = document.querySelector("#old-rate-btn")),
+      (elements.modalRateBtn = document.querySelector("#rate-btn")),
+      (elements.modalSellingPriceBtn = document.querySelector(
+        "#sellingPriceBtn"
+      )),
+      (elements.modalMortgageBalanceBtn = document.querySelector(
+        "#mortgageBalanceBtn"
+      )),
+      (elements.modalSubmit = document.querySelector(".submit")),
+      (elements.modalForm = document.querySelector(".house-modal__body"));
+  },
 
   loader: `<div class="loader"></div>`,
 

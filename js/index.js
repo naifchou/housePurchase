@@ -4,6 +4,8 @@ import { elements } from "./variables";
 import { listen } from "./base";
 import { callModal } from "./modal";
 import { loadForm } from "./form/loadForm";
+import { popup } from "./popup/popup";
+
 import "regenerator-runtime/runtime";
 
 const state = {};
@@ -20,5 +22,5 @@ getCounter(state);
 
 /*Call Modal*/
 listen(".call-modal", "click", () => {
-  callModal(state);
+  popup(`housePurchase.html`, `modal.js`);
 });
