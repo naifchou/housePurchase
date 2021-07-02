@@ -38,8 +38,11 @@ export const elements = {
   loader: `<div class="loader"></div>`,
 
   formMarkup: `<div class="form__container form__container--1">
+              
               <div class="housePriceDiv">
-                  <label>House Purchase Price:</label>
+                  <label>House Purchase Price: <span class="material-icons icon-delete">
+                  delete
+                  </span> </label>
                   <input type="text" class="formPurchasePrice">
               </div> 
 

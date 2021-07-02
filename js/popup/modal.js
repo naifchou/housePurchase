@@ -1,9 +1,9 @@
-import { validation } from "./validation";
-import { calcFormValues } from "./form/calculationsForm";
-import { toggleForm, toggleForm2 } from "./form/toggleForm";
-import { elements } from "./variables";
-import { listen } from "./base";
-import { formValues } from "./form/formVariables";
+import { validation } from "../validation";
+import { calcFormValues } from "../form/calculationsForm";
+import { toggleForm, toggleForm2 } from "../form/toggleForm";
+import { elements } from "../variables";
+import { listen } from "../base";
+import { formValues } from "../form/formVariables";
 
 export const callModal = (state) => {
   elements.callModal.style.display = "none";

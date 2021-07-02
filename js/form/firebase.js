@@ -39,3 +39,5 @@ const updateCounter = (counter) => {
     elements.callModal.style.display = "none";
   }
 };
+
+export const deleteScenario = () => {};

@@ -1,9 +1,6 @@
 import { elements } from "../variables";
 
-export const popup = async (url, js) => {
-  // console.log(`../${js}`);
-
-  // let { callModal } = await import(`../${js}`);
+export const popup = (url, js) => {
   const xhr = new XMLHttpRequest();
 
   xhr.onload = () => {
@@ -24,7 +21,7 @@ export const popup = async (url, js) => {
 const importJS = async (js) => {
   //   let path = `../${js}`;
   //   let callModal = await import(`` + path);
-  let callModal = await import(`../modal.js`);
+  let callModal = await import(`./modal.js`);
   console.log(callModal);
   callModal.callModal(state);
 };

@@ -2,7 +2,7 @@ import "../sass/main.scss";
 
 import { elements } from "./variables";
 import { listen } from "./base";
-import { callModal } from "./modal";
+import { callModal } from "./popup/modal";
 import { loadForm } from "./form/loadForm";
 import { popup } from "./popup/popup";
 
@@ -24,3 +24,7 @@ getCounter(state);
 listen(".call-modal", "click", () => {
   popup(`housePurchase.html`, `modal.js`);
 });
+
+/* Delete Functionality*/
+
+listen(".icon-delete", "click", () => {});
