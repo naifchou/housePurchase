@@ -4,27 +4,28 @@ export const elements = {
   theModal: document.querySelector(".house-modal"),
   modalQuestion1: document.querySelector(".house-modal__body__question--1"),
   modalFixedOrNotQ: document.querySelector(".house-modal__body__question--4"),
-  modalOldRateQ: document.querySelector("#oldRateQ"),
-  modalHousePrice: document.querySelector(".housePrice"),
-  modalSellingPrice: document.querySelector(".sellingPrice"),
+  modalOldRateQ: document.querySelector("#old-rate-q"),
+  modalHousePrice: document.querySelector(".house-price"),
+  modalSellingPrice: document.querySelector(".selling-price"),
   modalDeposit: document.querySelector(".deposit"),
-  modalMortgageBalance: document.querySelector(".mortgageBalance"),
+  modalMortgageBalance: document.querySelector(".mortgage-balance"),
 
   modalRate: document.querySelector(".rate"),
-  modalOldRate: document.querySelector(".oldRate"),
+  modalOldRate: document.querySelector(".old-rate"),
 
   modalTermTime: document.querySelector(".termTime"),
 
-  modalq1Btn: document.querySelector("#q1Btn"),
-  modalHousePriceBtn: document.querySelector("#housePriceBtn"),
-  modalDepositBtn: document.querySelector("#depositBtn"),
-  modalOldRateBtn: document.querySelector("#oldRateBtn"),
-  modalRateBtn: document.querySelector("#rateBtn"),
+  modalHousePriceBtn: document.querySelector("#house-price-btn"),
+  modalDepositBtn: document.querySelector("#deposit-btn"),
+  modalOldRateBtn: document.querySelector("#old-rate-btn"),
+  modalRateBtn: document.querySelector("#rate-btn"),
   modalSellingPriceBtn: document.querySelector("#sellingPriceBtn"),
   modalMortgageBalanceBtn: document.querySelector("#mortgageBalanceBtn"),
 
   modalSubmit: document.querySelector(".submit"),
   modalForm: document.querySelector(".house-modal__body"),
+
+  loader: `<div class="loader"></div>`,
 
   formMarkup: `<div class="form__container form__container--1">
               <div class="housePriceDiv">
@@ -33,7 +34,7 @@ export const elements = {
               </div> 
 
               <div>
-                  <label>Planned Deposit Payment </label>
+                  <label>Planned Cash Investment </label>
                   <input type="text" class="formDeposit">
               </div>
             </div>
@@ -41,7 +42,10 @@ export const elements = {
             <div class="form__container form__container--3">
 
               <div>
-                  <label >New Mortgage amount:</label>
+                  <label class="new-mortgage-label">New Mortgage amount:
+                    
+                  </label>
+
                   <input type="text" class="formNewMortgageAmount">
               </div>
               <div>   
@@ -64,7 +68,7 @@ export const elements = {
 
             <div class="form__container form__container--5">
               <div>
-                  <label>Total Cash Payment:</label>
+                  <label class="total-cash-label" >Total Cash Payment:</label>
                   <input type="text" class="formTotalCash">
               </div>
               <div>
@@ -88,6 +92,55 @@ export const elements = {
               <label for="price">Hosue Sale Price:</label>
               <input type="text" class="formSellingPrice">
             </div> `,
+
+  tooltipMarkup: `<div class="material-icons icon-info" data-tooltip = "">
+  info
+  </div>`,
+
+  validationObject: `[
+    {
+        "selector" : ".house-price",
+        "type" : "number",
+        "button" : "#house-price-btn",
+        "range" : {"min": 2000, "max": 99000000}
+    },
+    {
+        "selector" : ".deposit",
+        "type" : "number",
+        "button" : "#deposit-btn",
+        "range" : {"min": 2000, "max": 99000000}
+    },
+    {
+        "selector" : ".selling-price",
+        "type" : "number",
+        "button" : "#sellingPriceBtn",
+        "range" : {"min": 2000, "max": 99000000}
+    },
+    {
+        "selector" : ".mortgage-balance",
+        "type" : "number",
+        "button" : "#mortgageBalanceBtn",
+        "range" : {"min": 2000, "max": 99000000}
+    },
+    {
+        "selector" : ".rate",
+        "type" : "float",
+        "button" : "#rate-btn",
+        "range" : {"min": 0.2, "max": 4}
+    },
+    {
+        "selector" : ".old-rate",
+        "type" : "float",
+        "button" : "#old-rate-btn",
+        "range" : {"min": 0.2, "max": 4}
+    },
+    {
+        "selector" : ".termTime",
+        "type" : "number",
+        "button" : ".submit",
+        "range" : {"min": 10, "max": 40}
+    }
+]`,
 
   add: (counter) => {
     elements[`form${counter}`] = document.querySelector(`.form--${counter}`);

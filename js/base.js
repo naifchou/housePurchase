@@ -1,5 +1,5 @@
 import "regenerator-runtime/runtime";
-import { loadForm } from "./form";
+import { loadForm } from "./form/loadForm";
 import { elements } from "./variables";
 
 export const listen = (selector, type, callback) => {

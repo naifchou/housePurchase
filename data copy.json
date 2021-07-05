@@ -1,0 +1,14 @@
+[
+    {
+        "selector" : ".new-mortgage-label",
+        "content" : state.buyingOnly ? Purchase Price - (House Sale Price + Cash Deposit)"
+    },
+    {
+        "selector" : ".new-mortgage-label",
+        "content" : 
+    } 
+ 
+]
+
+
+

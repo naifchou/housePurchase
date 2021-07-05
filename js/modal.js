@@ -1,29 +1,32 @@
 import { validation } from "./validation";
-import { calcFormValues, toggleForm } from "../js/form";
+import { calcFormValues } from "./form/calculationsForm";
+import { toggleForm, toggleForm2 } from "./form/toggleForm";
 import { elements } from "./variables";
 import { listen } from "./base";
+import { formValues } from "./form/formVariables";
 
 export const callModal = (state) => {
+  elements.callModal.style.display = "none";
+  elements.theModal.style.display = "inline-block";
+  elements.modalQuestion1.style.display = "inline-block";
   //1. Hide Q1 in Modal to start series of next quesitons (controlled from within scss) and toggle form
 
-  listen(".q1BtnBuying", "click", () => {
+  listen(".q1-Btn-Buying", "click", () => {
     state.buyingOnly = true;
     toggleForm(state.buyingOnly, state.counter + 1);
   });
-  listen(".q1BtnBuyingSelling", "click", () => {
+
+  listen(".q1-Btn-Buying-Selling", "click", () => {
     state.buyingOnly = false;
     toggleForm(state.buyingOnly, state.counter + 1);
   });
 
   //
 
-  listen("#rateNotFixedBtn", "click", () => {
-    state.rateFixed = false;
-    elements.formOldRateDiv.parentNode.removeChild(elements.formOldRateDiv);
-    elements.modalOldRateQ.parentNode.removeChild(elements.modalOldRateQ);
-    elements.modalMortgageBalanceBtn.setAttribute("href", "#rateQ");
+  listen("#rate-not-fixed-btn", "click", () => {
+    toggleForm2(false, state.counter + 1);
   });
-  listen("#rateFixedBtn", "click", () => {
+  listen("#rate-fixed-btn", "click", () => {
     state.rateFixed = true;
   });
 
@@ -37,40 +40,9 @@ export const callModal = (state) => {
     }
   });
 
-  //3. Validation (takes selector, type - number or float, and button to toggle)
+  //3. Validation
 
-  validation(".housePrice", "number", elements.modalHousePriceBtn, {
-    min: 2000,
-    max: 99000000,
-  });
-  validation(".deposit", "number", elements.modalDepositBtn, {
-    min: 2000,
-    max: 99000000,
-  });
-  validation(".sellingPrice", "number", elements.modalSellingPriceBtn, {
-    min: 2000,
-    max: 99000000,
-  });
-  validation(".mortgageBalance", "number", elements.modalMortgageBalanceBtn, {
-    min: 2000,
-    max: 99000000,
-  });
-
-  //4. rate Validation
-  validation(".rate", "float", elements.modalRateBtn, {
-    min: 0.2,
-    max: 4,
-  });
-  validation(".oldRate", "float", elements.modalOldRateBtn, {
-    min: 0.2,
-    max: 4,
-  });
-
-  //5. term time validation
-  validation(".termTime", "number", elements.modalSubmit, {
-    min: 10,
-    max: 40,
-  });
+  validation(JSON.parse(elements.validationObject));
 
   //6. Toggle submit enable/disable
   listen(".termTime", "keyup", () => {
@@ -91,5 +63,6 @@ export const callModal = (state) => {
     elements.callModal.style.display = "inline-block";
     state.counter = state.counter + 1;
     calcFormValues(state, state.counter);
+    formValues.add(state);
   });
 };
