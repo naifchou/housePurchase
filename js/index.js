@@ -7,6 +7,7 @@ import { loadForm } from "./form/loadForm";
 import { popup } from "./popup/popup";
 
 import "regenerator-runtime/runtime";
+import { deleteScenario } from "./form/firebase";
 
 const state = {};
 window.state = state;
@@ -27,4 +28,6 @@ listen(".call-modal", "click", () => {
 
 /* Delete Functionality*/
 
-listen(".icon-delete", "click", () => {});
+listen(".icon-delete", "click", (e) => {
+  deleteScenario(e, state.counter);
+});

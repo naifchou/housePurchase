@@ -15,5 +15,8 @@ export const calcFormValues = (state, counter) => {
   }
 
   displayValues(state, counter);
+  document.querySelector(`.form--${counter}`).style.visibility = "hidden";
   updateDatabase(state);
+
+  location.reload();
 };

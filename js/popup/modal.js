@@ -61,6 +61,7 @@ export const callModal = (state) => {
     nextForm.style.display = "inline-block";
     elements.theModal.style.display = "none";
     elements.callModal.style.display = "inline-block";
+
     state.counter = state.counter + 1;
     calcFormValues(state, state.counter);
     formValues.add(state);

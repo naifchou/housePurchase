@@ -10,6 +10,7 @@ export const loadForm = (counter) => {
     for (let i = 1; i <= counter; i++) {
       let form = document.querySelector(`.form--${i}`);
       form.insertAdjacentHTML("afterbegin", elements.formMarkup);
+      loadDeleteIcon(i);
       form.style.display = "inline-block";
       elements.add(i);
       getData(i);
@@ -67,4 +68,12 @@ const getData = async (counter) => {
     elements[`formOldRate${counter}`].value = snapshot.val().OldRate;
   }
   createTooltip(buyingOnly, elements.tooltipMarkup, counter);
+};
+
+const loadDeleteIcon = (counter) => {
+  const markup = `<span class="material-icons icon-delete" data-counter=${counter}> delete </span>`;
+  const element = document.querySelector(
+    `.form--${counter} .housePriceDiv label`
+  );
+  element.insertAdjacentHTML("beforeend", markup);
 };

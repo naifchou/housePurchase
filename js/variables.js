@@ -40,9 +40,7 @@ export const elements = {
   formMarkup: `<div class="form__container form__container--1">
               
               <div class="housePriceDiv">
-                  <label>House Purchase Price: <span class="material-icons icon-delete">
-                  delete
-                  </span> </label>
+                  <label>House Purchase Price: </label>
                   <input type="text" class="formPurchasePrice">
               </div> 
 
@@ -139,13 +137,13 @@ export const elements = {
         "selector" : ".rate",
         "type" : "float",
         "button" : "#rate-btn",
-        "range" : {"min": 0.2, "max": 4}
+        "range" : {"min": 0.2, "max": 5}
     },
     {
         "selector" : ".old-rate",
         "type" : "float",
         "button" : "#old-rate-btn",
-        "range" : {"min": 0.2, "max": 4}
+        "range" : {"min": 0.2, "max": 5}
     },
     {
         "selector" : ".termTime",
