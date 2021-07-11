@@ -1,11 +1,11 @@
 export const elements = {
   callModal: document.querySelector(".call-modal"),
-  theModal: document.querySelector(".house-modal"),
 
   addModal: () => {
-    (elements.modalQuestion1 = document.querySelector(
-      ".house-modal__body__question--1"
-    )),
+    (elements.theModal = document.querySelector(".house-modal")),
+      (elements.modalQuestion1 = document.querySelector(
+        ".house-modal__body__question--1"
+      )),
       (elements.modalFixedOrNotQ = document.querySelector(
         ".house-modal__body__question--4"
       )),

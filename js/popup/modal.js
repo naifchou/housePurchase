@@ -5,6 +5,8 @@ import { elements } from "../variables";
 import { listen } from "../base";
 import { formValues } from "../form/formVariables";
 
+elements.addModal();
+console.log("modal js loaded");
 export const callModal = (state) => {
   elements.callModal.style.display = "none";
   elements.theModal.style.display = "inline-block";
@@ -67,3 +69,5 @@ export const callModal = (state) => {
     formValues.add(state);
   });
 };
+
+callModal(window.state);

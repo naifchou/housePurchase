@@ -2,11 +2,11 @@ import "../sass/main.scss";
 
 import { elements } from "./variables";
 import { listen } from "./base";
-import { callModal } from "./popup/modal";
 import { loadForm } from "./form/loadForm";
-import { popup } from "./popup/popup";
-
+import { googleSignIn } from "./form/googleSignIn";
+import { createPopup } from "./popup/popup";
 import "regenerator-runtime/runtime";
+
 import { deleteScenario } from "./form/firebase";
 
 const state = {};
@@ -22,12 +22,17 @@ const getCounter = async (state) => {
 getCounter(state);
 
 /*Call Modal*/
+
 listen(".call-modal", "click", () => {
-  popup(`housePurchase.html`, `modal.js`);
+  createPopup("/housePurchase.html");
 });
 
 /* Delete Functionality*/
 
 listen(".icon-delete", "click", (e) => {
   deleteScenario(e, state.counter);
+});
+
+listen(".icon-login", "click", () => {
+  googleSignIn();
 });

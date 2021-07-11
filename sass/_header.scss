@@ -29,6 +29,29 @@
     }
 }
 
+.icon-login {
+    position: absolute;
+    right: 4rem;
+    top: 3.5rem;
+    font-size: 4rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.icon-logout {
+    position: absolute;
+    right: 4rem;
+    top: 3.5rem;
+    font-size: 4rem;
+    visibility: hidden;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 
 
 
